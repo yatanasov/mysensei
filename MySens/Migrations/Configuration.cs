@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MySens.Infrastructure;
 using MySens.Models;
+
+
 namespace MySens.Migrations
 {
     internal sealed class Configuration
@@ -35,7 +37,11 @@ namespace MySens.Migrations
             {
                 userMgr.AddToRole(user.Id, roleName);
             }
-            
+            foreach (AppUser dbUser in userMgr.Users)
+            {
+                dbUser.City = Cities.PARIS;
+            }
+
             context.SaveChanges();
         }
     }
