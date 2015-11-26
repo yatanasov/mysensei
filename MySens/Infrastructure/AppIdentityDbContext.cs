@@ -9,7 +9,7 @@ namespace MySens.Infrastructure
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
         public DbSet<Course> Courses { get; set; } // Extra DbSet
-
+       //public DbSet<Course> CoursesTeaching { get; set; } // Extra DbSet
 
 
         public AppIdentityDbContext() : base("IdentityDb") {
@@ -18,12 +18,24 @@ namespace MySens.Infrastructure
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-           // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
-            // one-to-many relation between Course (1) and User (N)
+            // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Identity use pluralized table names
+            modelBuilder.Entity<AppUser>()
+                   .HasMany<Course>(s => s.CoursesEnrolled)
+                   .WithMany(c => c.EnrolledStudents)
+                   .Map(cs =>
+                   {
+                       cs.MapLeftKey("StudentId");
+                       cs.MapRightKey("CourseId");
+                       cs.ToTable("StudentEnrollments");
+                   });
+
             modelBuilder.Entity<Course>()
-            .HasRequired<AppUser>(s => s.AppUser)
-            .WithMany(s => s.Courses)
-            .HasForeignKey(s => s.AppUserID);
+            .HasRequired<AppUser>(c => c.Teacher)
+            .WithMany(s => s.CoursesTeaching)
+            .HasForeignKey(c => c.AppUserID)
+             .WillCascadeOnDelete(false);
+
+
             // the all important base class call! Add this line to make your problems go away.
             base.OnModelCreating(modelBuilder);
         }

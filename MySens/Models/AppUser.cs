@@ -13,6 +13,16 @@ namespace MySens.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Cities City { get; set; }
-        public virtual ICollection<Course> Courses { get; set; }
+       // public string Email { get; set; }
+        //public int PhoneNumber { get; set; }
+       // public string PasswordHash { get; set; }
+       // public string UserName { get; set; }
+       // public string Id { get; set; }
+              
+        public virtual ICollection<Course> CoursesEnrolled { get; set; }
+
+        public virtual ICollection<Course> CoursesTeaching { get; set; }
+
+//        public virtual ICollection<AppRole> Roles { get; set; }
     }
 }

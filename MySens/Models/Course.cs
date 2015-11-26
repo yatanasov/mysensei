@@ -14,8 +14,15 @@ namespace MySens.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int NumberOfLessons { get; set; }
-        public string AppUserID { get; set; }
-        public virtual AppUser AppUser { get; set; }
 
+
+        public string AppUserID { get; set; }
+        public virtual AppUser Teacher { get; set; }
+
+
+        public virtual ICollection<Tag> CourseTags { get; set; }
+        public virtual ICollection<AppUser> EnrolledStudents { get; set; }
+
+       
     }
 }
