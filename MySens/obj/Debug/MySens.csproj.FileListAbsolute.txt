@@ -109,11 +109,7 @@ C:\Users\yordan\Desktop\MySens\MySens\bin\System.Web.Webpages.Deployment.xml
 C:\Users\yordan\Desktop\MySens\MySens\bin\System.Web.Webpages.Razor.xml
 C:\Users\yordan\Desktop\MySens\MySens\bin\System.Web.Helpers.xml
 C:\Users\yordan\Desktop\MySens\MySens\bin\System.Web.Mvc.xml
-C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.dll
-C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.pdb
-C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csprojResolveAssemblyReference.cache
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.Inital3.resources
-C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csproj.GenerateResource.Cache
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.onetomanycourseusertable.resources
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.test.resources
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.test1.resources
@@ -121,3 +117,6 @@ C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.relationships.
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.relationshipstudentcourses.resources
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.relationshipteachercourses2.resources
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.relationshipteachercourses.resources
+C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csproj.GenerateResource.Cache
+C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.dll
+C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.pdb

@@ -42,7 +42,8 @@ namespace MySens.Controllers
         public ActionResult Create()
         {
             //  ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "FirstName");
-            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName");
+            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName");
+
             return View();
         }
 
@@ -76,7 +77,8 @@ namespace MySens.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
+            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
+
             return View(course);
         }
 

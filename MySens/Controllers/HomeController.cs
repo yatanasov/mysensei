@@ -15,7 +15,7 @@ namespace MySens.Controllers
     {
         // GET: Home
 
-        [Authorize]
+       // [Authorize]
         public ActionResult Index()
         {
             return View(GetData("Index"));
@@ -36,7 +36,7 @@ namespace MySens.Controllers
             dict.Add("User", HttpContext.User.Identity.Name);
             dict.Add("Authenticated", HttpContext.User.Identity.IsAuthenticated);
             dict.Add("Auth Type", HttpContext.User.Identity.AuthenticationType);
-            dict.Add("In Users Role", HttpContext.User.IsInRole("Users"));
+           // dict.Add("In Users Role", HttpContext.User.IsInRole("Users"));
             return dict;
         }
 

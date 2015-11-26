@@ -46,7 +46,7 @@ namespace MySens.Controllers
                     {
                         IsPersistent = false
                     }, ident);
-                    return Redirect(returnUrl);
+                    return RedirectToLocal(returnUrl);
                 }
             }
             ViewBag.returnUrl = returnUrl;
@@ -58,9 +58,19 @@ namespace MySens.Controllers
         public ActionResult Logout()
         {
             AuthManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
-
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
         private IAuthenticationManager AuthManager
         {
             get

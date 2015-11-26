@@ -2,6 +2,17 @@
 @{
     ViewBag.Title = "Index";
 }
+<div>Menu</div>
+<br />
+<div>Hide this if user is logged in:</div>
+@Html.ActionLink("Log In", "Login", "Account", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Sign Up", "Create", "Account", null, new { @class = "btn btn-primary" })
+
+<div>IF ADMINISTRATOR is logged in show:</div>
+@Html.ActionLink("Administrator Panel", "Index", "Admin", null, new { @class = "btn btn-primary" })
+<div></div>
+
+<div>Slider</div>
 
 <div class="panel panel-primary">
     <div class="panel-heading">User Details</div>

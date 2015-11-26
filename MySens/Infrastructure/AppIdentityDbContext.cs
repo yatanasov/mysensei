@@ -50,6 +50,7 @@ namespace MySens.Infrastructure
         {
             return new AppIdentityDbContext();
         }
+
     }
 
     public class IdentityDbInit : NullDatabaseInitializer<AppIdentityDbContext>
