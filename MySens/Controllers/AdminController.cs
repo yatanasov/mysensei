@@ -17,8 +17,6 @@ namespace MySens.Controllers
             return View(UserManager.Users);
         }
 
-
-
         public ActionResult Create()
         {
             return View();
@@ -46,6 +44,28 @@ namespace MySens.Controllers
             }
             return View(model);
         }
+
+        // Create
+        [HttpPost]
+        public async Task<ActionResult> CreateUser(CreateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = new AppUser { FirstName = model.FirstName, LastName = model.LastName, UserName = model.UserName, Email = model.Email };
+                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    AddErrorsFromResult(result);
+                }
+            }
+            return View(model);
+        }
+
 
         // Edit
         public async Task<ActionResult> Edit(string id)

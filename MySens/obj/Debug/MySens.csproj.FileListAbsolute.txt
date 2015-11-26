@@ -120,3 +120,4 @@ C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.relationshipte
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csproj.GenerateResource.Cache
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.dll
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.pdb
+C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csprojResolveAssemblyReference.cache

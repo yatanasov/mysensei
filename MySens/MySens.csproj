@@ -245,6 +245,12 @@
     <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\AppUser\Create.cshtml" />
+    <Content Include="Views\AppUser\Delete.cshtml" />
+    <Content Include="Views\AppUser\Details.cshtml" />
+    <Content Include="Views\AppUser\Edit.cshtml" />
+    <Content Include="Views\AppUser\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

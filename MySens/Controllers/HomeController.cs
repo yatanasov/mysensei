@@ -13,9 +13,10 @@ namespace MySens.Controllers
 {
     public class HomeController : Controller
     {
+        private AppIdentityDbContext db = new AppIdentityDbContext();
         // GET: Home
 
-       // [Authorize]
+        // [Authorize]
         public ActionResult Index()
         {
             return View(GetData("Index"));
@@ -27,8 +28,7 @@ namespace MySens.Controllers
             return View("Index", GetData("OtherAction"));
         }
 
-
-
+       
         private Dictionary<string, object> GetData(string actionName)
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
