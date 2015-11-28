@@ -16,7 +16,7 @@ namespace MySens.Controllers
         private AppIdentityDbContext db = new AppIdentityDbContext();
         // GET: Home
 
-        // [Authorize]
+       // [Authorize]
         public ActionResult Index()
         {
             return View(GetData("Index"));

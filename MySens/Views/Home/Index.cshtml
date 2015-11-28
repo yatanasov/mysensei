@@ -4,15 +4,19 @@
 }
 <div>Menu</div>
 <br />
-<div>Hide this if user is logged in:</div>
+<div>This two buttons must be hidden if user is logged in :</div>
 @Html.ActionLink("Log In", "Login", "Account", null, new { @class = "btn btn-primary" })
 
+@Html.ActionLink("Sign Up", "Create","AppUser", null, new { @class = "btn btn-primary" })
 
-@Html.ActionLink("Sign Up", "Create","Admin", null, new { @class = "btn btn-primary" })
 
-
-<div>IF ADMINISTRATOR is logged in show:</div>
+<div>IF ADMINISTRATOR is logged in then this button should be visible ? :</div>
 @Html.ActionLink("Administrator Panel", "Index", "Admin", null, new { @class = "btn btn-primary" })
+
+
+
+<div id="toUpdate"></div>
+
 <div></div>
 
 <div>Slider</div>

@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using MySens.Infrastructure;
 using System.Web;
+using System;
 
 namespace MySens.Controllers
 {
@@ -46,13 +47,41 @@ namespace MySens.Controllers
                     {
                         IsPersistent = false
                     }, ident);
-                    return RedirectToLocal(returnUrl);
+
+                    System.Diagnostics.Debug.WriteLine("Logging in ...................");
+
+                    System.Diagnostics.Debug.WriteLine(user.Id);
+
+                    if (UserManager.IsInRole(user.Id, "Instructors"))
+                    {
+                        System.Diagnostics.Debug.WriteLine("Instructors");
+                        return RedirectToAction("Index", "Instructor");
+                    }
+                    //role Admin go to Admin page
+                    else if (UserManager.IsInRole(user.Id, "Administrators"))
+                    {
+                        System.Diagnostics.Debug.WriteLine("Admin");
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else
+                    {
+                        //no role
+                        System.Diagnostics.Debug.WriteLine("No role");
+                        return RedirectToAction("Index", "Home");
+                    }
+
+
+                 //   return RedirectToLocal(returnUrl);
                 }
             }
             ViewBag.returnUrl = returnUrl;
                         return View(details);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         [Authorize]
         public ActionResult Logout()

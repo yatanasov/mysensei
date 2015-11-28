@@ -51,7 +51,7 @@ namespace MySens.Infrastructure
             return new AppIdentityDbContext();
         }
 
-      
+       // public System.Data.Entity.DbSet<MySens.Models.AppUser> AppUsers { get; set; }
     }
 
     public class IdentityDbInit : NullDatabaseInitializer<AppIdentityDbContext>

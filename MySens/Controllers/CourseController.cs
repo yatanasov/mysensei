@@ -24,6 +24,7 @@ namespace MySens.Controllers
         }
 
         // GET: Course/Details/5
+        [Authorize(Roles = "Administrators")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +40,7 @@ namespace MySens.Controllers
         }
 
         // GET: Course/Create
+        [Authorize(Roles = "Administrators")]
         public ActionResult Create()
         {
             //  ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "FirstName");
@@ -66,22 +68,37 @@ namespace MySens.Controllers
         }
 
         // GET: Course/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Course course = db.Courses.Find(id);
+        //    if (course == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
+
+        //    return View(course);
+        //}
+        [Authorize(Roles = "Administrators")]
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            if (id == null) { return new HttpStatusCodeResult(HttpStatusCode.BadRequest); }
             Course course = db.Courses.Find(id);
-            if (course == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
 
+
+            if (course == null) { return HttpNotFound(); }
+            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", “UserName", course.AppUserID);
+            ViewBag.AppUserID = new SelectList(
+            UserManager.Users
+            .Where(u => u.Roles.Select(r => r.RoleId)
+            .Contains("50844948-9520-4322-9703-4764bb317d99"))
+            .ToList(), "Id", "UserName");
             return View(course);
         }
-
         // POST: Course/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -100,6 +117,7 @@ namespace MySens.Controllers
         }
 
         // GET: Course/Delete/5
+        [Authorize(Roles = "Administrators")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
