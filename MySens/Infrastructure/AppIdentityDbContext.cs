@@ -8,8 +8,10 @@ namespace MySens.Infrastructure
 
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
-        public DbSet<Course> Courses { get; set; } // Extra DbSet
-       //public DbSet<Course> CoursesTeaching { get; set; } // Extra DbSet
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        // Extra DbSet
+                                                  //public DbSet<Course> CoursesTeaching { get; set; } // Extra DbSet
 
 
         public AppIdentityDbContext() : base("IdentityDb") {

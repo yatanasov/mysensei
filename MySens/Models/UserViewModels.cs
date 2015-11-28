@@ -39,4 +39,11 @@ namespace MySens.Models
         public string[] IdsToAdd { get; set; }
         public string[] IdsToDelete { get; set; }
     }
+
+    public class AssignedTagData
+    {
+        public int TagID { get; set; }
+        public string TagName { get; set; }
+        public bool Assigned { get; set; }
+    }
 }

@@ -54,44 +54,46 @@ namespace MySens.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseID,Title,price,Description,StartDate,EndDate,NumberOfLessons,AppUserID")] Course course)
+        public ActionResult Create([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,AppUserID")]
+Course course, string[] selectedTags)
         {
+            if (selectedTags != null)
+            {
+                course.CourseTags = new List<Tag>();
+                foreach (var tag in selectedTags)
+                {
+                    var tagToAdd = db.Tags.Find(int.Parse(tag));
+                    course.CourseTags.Add(tagToAdd);
+                }
+            }
             if (ModelState.IsValid)
             {
                 db.Courses.Add(course);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-         //   ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "FirstName", course.AppUserID);
+            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "Username", course.AppUserID);
             return View(course);
         }
 
-        // GET: Course/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Course course = db.Courses.Find(id);
-        //    if (course == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
-
-        //    return View(course);
-        //}
+        //GET
         [Authorize(Roles = "Administrators")]
         public ActionResult Edit(int? id)
         {
-            if (id == null) { return new HttpStatusCodeResult(HttpStatusCode.BadRequest); }
-            Course course = db.Courses.Find(id);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Course course = db.Courses
+            .Include(c => c.CourseTags)
+            .Where(c => c.CourseID == id)
+            .Single();
+            PopulateTagsData(course);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
 
-
-            if (course == null) { return HttpNotFound(); }
-            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", “UserName", course.AppUserID);
             ViewBag.AppUserID = new SelectList(
             UserManager.Users
             .Where(u => u.Roles.Select(r => r.RoleId)
@@ -104,17 +106,33 @@ namespace MySens.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseID,Title,price,Description,StartDate,EndDate,NumberOfLessons,AppUserID")] Course course)
+        public ActionResult Edit(int? CourseID, string[] selectedTags)
         {
-            if (ModelState.IsValid)
+            var courseToUpdate = db.Courses.Include(c => c.AppUserID).Include(c => c.CourseTags).Where(c => c.CourseID == CourseID).Single();
+            if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons",
+"AppUserID" }))
             {
-                db.Entry(course).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    UpdateCourseTags(selectedTags, courseToUpdate);
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Unable to save changes.");
+                }
             }
-       //     ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "FirstName", course.AppUserID);
-            return View(course);
-        }
+            // Instructors dropdown list
+            ViewBag.AppUserID = new SelectList(
+            UserManager.Users
+            .Where(u => u.Roles.Select(r => r.RoleId)
+            .Contains("9ce36aac-c95b-41a7-8013-0aab4a395c95"))
+            .ToList(), "Id",
+            "UserName");
+            // Tags check boxes
+            PopulateTagsData(courseToUpdate);
+            return View(courseToUpdate);
+        }
 
         // GET: Course/Delete/5
         [Authorize(Roles = "Administrators")]
@@ -132,17 +150,66 @@ namespace MySens.Controllers
             return View(course);
         }
 
+
+        [Authorize(Roles = "Administrators")]
         // POST: Course/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Course course = db.Courses.Find(id);
+            Course course = db.Courses
+            .Include(c => c.CourseTags)
+            .Where(c => c.CourseID == id)
+            .Single();
             db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public void UpdateCourseTags(string[] selectedTags, Course courseToUpdate)
+        {
+            if (selectedTags == null)
+            {
+                courseToUpdate.CourseTags = new List<Tag>();
+                return;
+            }
+            var selectedTagsHS = new HashSet<string>(selectedTags);
+            var courseTags = new HashSet<int>(courseToUpdate.CourseTags.Select(t => t.TagID));
+            foreach (var tag in db.Tags)
+            {
+                if (selectedTagsHS.Contains(tag.TagID.ToString()))
+                {
+                    if (!courseTags.Contains(tag.TagID))
+                    {
+                        courseToUpdate.CourseTags.Add(tag);
+                    }
+                }
+                else
+                {
+                    if (courseTags.Contains(tag.TagID))
+                    {
+                        courseToUpdate.CourseTags.Remove(tag);
+                    }
+                }
+            }
         }
 
+        private void PopulateTagsData(Course course)
+        {
+            var allTags = db.Tags;
+            var coursesTags = new HashSet<int>(course.CourseTags.Select(t => t.TagID));
+            var viewModel = new List<AssignedTagData>();
+            foreach (var tag in allTags)
+            {
+                viewModel.Add(new AssignedTagData
+                {
+                    TagID = tag.TagID,
+                    TagName = tag.Name,
+                    Assigned = coursesTags.Contains(tag.TagID)
+                });
+            }
+            ViewBag.Tags = viewModel;
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
