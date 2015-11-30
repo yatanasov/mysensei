@@ -121,3 +121,4 @@ C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csproj.GenerateResource.C
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.dll
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.pdb
 C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.csprojResolveAssemblyReference.cache
+C:\Users\yordan\Desktop\MySens\MySens\obj\Debug\MySens.Migrations.removeddata.resources

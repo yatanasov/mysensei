@@ -11,6 +11,7 @@
     <ProjectView>ProjectFiles</ProjectView>
     <WebStackScaffolding_DbContextTypeFullName>MySens.Infrastructure.AppIdentityDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>MySen</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

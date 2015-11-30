@@ -153,6 +153,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\MySen.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -220,6 +221,10 @@
     <Compile Include="Migrations\201511261044248_relationship-teacher-courses.Designer.cs">
       <DependentUpon>201511261044248_relationship-teacher-courses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511291218127_removeddata.cs" />
+    <Compile Include="Migrations\201511291218127_removeddata.Designer.cs">
+      <DependentUpon>201511291218127_removeddata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -282,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511261044248_relationship-teacher-courses.resx">
       <DependentUpon>201511261044248_relationship-teacher-courses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511291218127_removeddata.resx">
+      <DependentUpon>201511291218127_removeddata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

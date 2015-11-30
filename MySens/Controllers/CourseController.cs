@@ -17,6 +17,7 @@ namespace MySens.Controllers
         private AppIdentityDbContext db = new AppIdentityDbContext();
 
         // GET: Course
+        [Authorize(Roles = "Administrators")]
         public ActionResult Index()
         {
             var courses = db.Courses.Include(c => c.Teacher);
@@ -108,7 +109,7 @@ Course course, string[] selectedTags)
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int? CourseID, string[] selectedTags)
         {
-            var courseToUpdate = db.Courses.Include(c => c.AppUserID).Include(c => c.CourseTags).Where(c => c.CourseID == CourseID).Single();
+            var courseToUpdate = db.Courses.Include(c => c.Teacher).Include(c => c.CourseTags).Where(c => c.CourseID == CourseID).Single();
             if (TryUpdateModel(courseToUpdate, "", new string[] { "Title", "Description", "StartDate", "EndDate", "NumberOfLessons",
 "AppUserID" }))
             {

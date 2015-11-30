@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MySen" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\yordan\\Desktop\\MySens\\MySens\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\yordan\\Desktop\\MySens\\MySens\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="MySen/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\yordan\\Desktop\\MySens\\MySens\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="IdentityDb-Web.config Connection String" description="" value="Data Source=tcp:mysen.database.windows.net,1433;Initial Catalog=MySen_db;User Id=mysen@mysen;Password=NQmapas22@@" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yordan\\Desktop\\MySens\\MySens\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDb']/@connectionString" />
+  </parameter>
+</parameters>

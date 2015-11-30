@@ -55,7 +55,7 @@ namespace MySens.Controllers
                     if (UserManager.IsInRole(user.Id, "Instructors"))
                     {
                         System.Diagnostics.Debug.WriteLine("Instructors");
-                        return RedirectToAction("Index", "Instructor");
+                        return RedirectToAction("Index", "Home");
                     }
                     //role Admin go to Admin page
                     else if (UserManager.IsInRole(user.Id, "Administrators"))
