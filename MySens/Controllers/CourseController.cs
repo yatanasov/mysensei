@@ -73,7 +73,6 @@ namespace MySens.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
-            //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "Username", course.AppUserID);
             return View(course);
         }
 

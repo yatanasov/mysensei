@@ -12,9 +12,16 @@ namespace MySens.Controllers
     [Authorize(Roles = "Administrators")]
     public class AdminController : Controller
     {
+
+        private AppIdentityDbContext db = new AppIdentityDbContext();
         public ActionResult Index()
         {
-            return View(UserManager.Users);
+            AdminViewModel adminViewModel = new AdminViewModel();
+            adminViewModel.AppUsers = UserManager.Users;
+            adminViewModel.Courses = db.Courses;
+            adminViewModel.Tags = db.Tags;
+
+            return View(adminViewModel);
         }
 
         public ActionResult Create()
