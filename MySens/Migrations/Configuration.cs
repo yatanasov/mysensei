@@ -13,6 +13,7 @@ namespace MySens.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+        //    AutomaticMigrationDataLossAllowed = true;
             ContextKey = "MySens.Infrastructure.AppIdentityDbContext";
         }
         protected override void Seed(AppIdentityDbContext context)

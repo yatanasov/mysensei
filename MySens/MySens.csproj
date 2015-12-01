@@ -154,6 +154,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\MySen.pubxml" />
+    <None Include="Properties\PublishProfiles\MySenseiApp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -189,41 +190,13 @@
     <Compile Include="Infrastructure\AppIdentityDbContext.cs" />
     <Compile Include="Infrastructure\CustomPasswordValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelpers.cs" />
-    <Compile Include="Migrations\201511252133297_Inital3.cs" />
-    <Compile Include="Migrations\201511252133297_Inital3.Designer.cs">
-      <DependentUpon>201511252133297_Inital3.cs</DependentUpon>
+    <Compile Include="Migrations\201511302203000_relationships.cs" />
+    <Compile Include="Migrations\201511302203000_relationships.Designer.cs">
+      <DependentUpon>201511302203000_relationships.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511252159053_one-to-many-course-user-table.cs" />
-    <Compile Include="Migrations\201511252159053_one-to-many-course-user-table.Designer.cs">
-      <DependentUpon>201511252159053_one-to-many-course-user-table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511252216214_test.cs" />
-    <Compile Include="Migrations\201511252216214_test.Designer.cs">
-      <DependentUpon>201511252216214_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511260922492_test1.cs" />
-    <Compile Include="Migrations\201511260922492_test1.Designer.cs">
-      <DependentUpon>201511260922492_test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511260953421_relationships.cs" />
-    <Compile Include="Migrations\201511260953421_relationships.Designer.cs">
-      <DependentUpon>201511260953421_relationships.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511260959428_relationship-student-courses.cs" />
-    <Compile Include="Migrations\201511260959428_relationship-student-courses.Designer.cs">
-      <DependentUpon>201511260959428_relationship-student-courses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511261034221_relationship-teacher-courses2.cs" />
-    <Compile Include="Migrations\201511261034221_relationship-teacher-courses2.Designer.cs">
-      <DependentUpon>201511261034221_relationship-teacher-courses2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511261044248_relationship-teacher-courses.cs" />
-    <Compile Include="Migrations\201511261044248_relationship-teacher-courses.Designer.cs">
-      <DependentUpon>201511261044248_relationship-teacher-courses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511291218127_removeddata.cs" />
-    <Compile Include="Migrations\201511291218127_removeddata.Designer.cs">
-      <DependentUpon>201511291218127_removeddata.cs</DependentUpon>
+    <Compile Include="Migrations\201511302205323_removedrelationships.cs" />
+    <Compile Include="Migrations\201511302205323_removedrelationships.Designer.cs">
+      <DependentUpon>201511302205323_removedrelationships.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -264,32 +237,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511252133297_Inital3.resx">
-      <DependentUpon>201511252133297_Inital3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511302203000_relationships.resx">
+      <DependentUpon>201511302203000_relationships.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511252159053_one-to-many-course-user-table.resx">
-      <DependentUpon>201511252159053_one-to-many-course-user-table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511252216214_test.resx">
-      <DependentUpon>201511252216214_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511260922492_test1.resx">
-      <DependentUpon>201511260922492_test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511260953421_relationships.resx">
-      <DependentUpon>201511260953421_relationships.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511260959428_relationship-student-courses.resx">
-      <DependentUpon>201511260959428_relationship-student-courses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261034221_relationship-teacher-courses2.resx">
-      <DependentUpon>201511261034221_relationship-teacher-courses2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261044248_relationship-teacher-courses.resx">
-      <DependentUpon>201511261044248_relationship-teacher-courses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511291218127_removeddata.resx">
-      <DependentUpon>201511291218127_removeddata.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511302205323_removedrelationships.resx">
+      <DependentUpon>201511302205323_removedrelationships.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

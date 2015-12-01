@@ -55,8 +55,7 @@ namespace MySens.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,AppUserID")]
-Course course, string[] selectedTags)
+        public ActionResult Create([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,AppUserID")] Course course, string[] selectedTags)
         {
             if (selectedTags != null)
             {
@@ -73,6 +72,7 @@ Course course, string[] selectedTags)
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName", course.AppUserID);
             //ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "Username", course.AppUserID);
             return View(course);
         }

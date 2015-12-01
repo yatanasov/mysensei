@@ -3,7 +3,7 @@ namespace MySens.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class relationshipteachercourses : DbMigration
+    public partial class relationships : DbMigration
     {
         public override void Up()
         {

@@ -3,7 +3,7 @@ namespace MySens.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class test : DbMigration
+    public partial class removedrelationships : DbMigration
     {
         public override void Up()
         {

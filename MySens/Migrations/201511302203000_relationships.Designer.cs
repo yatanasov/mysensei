@@ -7,13 +7,13 @@ namespace MySens.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Inital3 : IMigrationMetadata
+    public sealed partial class relationships : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Inital3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(relationships));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511252133297_Inital3"; }
+            get { return "201511302203000_relationships"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace MySens.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class onetomanycourseusertable : IMigrationMetadata
+    public sealed partial class removedrelationships : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(onetomanycourseusertable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(removedrelationships));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511252159053_one-to-many-course-user-table"; }
+            get { return "201511302205323_removedrelationships"; }
         }
         
         string IMigrationMetadata.Source
