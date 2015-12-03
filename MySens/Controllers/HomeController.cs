@@ -1,7 +1,8 @@
 using System.Web.Mvc;
 using System.Collections.Generic;
 using System.Web;
-using System.Security.Principal;
+using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using MySens.Infrastructure;
 using Microsoft.AspNet.Identity;
@@ -28,7 +29,33 @@ namespace MySens.Controllers
             return View("Index", GetData("OtherAction"));
         }
 
-       
+        // GET: Home/Create
+        public ActionResult Create()
+        {
+            //  ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "FirstName");
+            ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName");
+
+            return View();
+        }
+
+        // POST: Home/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "CourseID,Title,Description,StartDate,EndDate,NumberOfLessons,AppUserID")] Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                course.AppUserID = HttpContext.User.Identity.GetUserId();
+                db.Courses.Add(course);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+                      
+            return View(course);
+        }
+
         private Dictionary<string, object> GetData(string actionName)
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();

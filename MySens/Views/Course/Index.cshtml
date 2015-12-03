@@ -13,9 +13,9 @@
 </head>
 <body>
     <h1>Courses</h1>
-    <p>
+    @*<p>
         @Html.ActionLink("Create New", "Create")
-    </p>
+    </p>*@
     <table class="table">
         <tr>
             <th>
@@ -69,6 +69,7 @@
                 @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+                @Html.ActionLink("Sign Up", "Signup", new { id = item.CourseID })
             </td>
         </tr>
     }

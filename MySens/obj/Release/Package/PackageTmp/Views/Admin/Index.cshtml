@@ -1,5 +1,6 @@
-@using MySens.Models
-@model IEnumerable<AppUser>
+@using MySens.Models;
+@model  MySens.Models.AdminViewModel
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,13 +10,13 @@
     </div>
     <table class="table table-striped">
         <tr><th>ID</th><th>User name</th><th>Email</th><th></th></tr>
-        @if (Model.Count() == 0)
+        @if (Model.AppUsers.Count() == 0)
         {
             <tr><td colspan="4" class="text-center">No User Accounts</td></tr>
         }
         else
         {
-            foreach (AppUser user in Model)
+            foreach (AppUser user in Model.AppUsers)
             {
                 <tr>
                     <td>@user.Id</td>
@@ -39,17 +40,75 @@
     <div class="panel-heading">
         Courses
     </div>
-    </br>
-    </br>
-    <div class="panel-heading">
-        Categories
-    </div>
-    </br>
-    </br>
+    <table class="table table-striped">
+        <tr><th>ID</th><th>Instructor</th><th>Title</th><th>Price</th><th>City</th><th>N of Lessons</th><th>Start Date</th></tr>
+        @if (Model.Courses.Count() == 0)
+        {
+            <tr><td colspan="4" class="text-center">No User Accounts</td></tr>
+        }
+        else
+        {
+            foreach (Course course in Model.Courses)
+            {
+                <tr>
+                    <td>@course.CourseID</td>
+                    <td>@course.Teacher.UserName</td>
+                    <td>@course.Title</td>
+                    <td>@course.price</td>
+                    <td>@course.Teacher.City</td>
+                    <td>@course.NumberOfLessons</td>
+                    <td>@course.StartDate</td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Course", new { id = course.CourseID }))
+                        {  @Html.AntiForgeryToken()
+                            @Html.ActionLink("Edit", "Edit", "Course", new { id = course.CourseID}, new { @class = "btn btn-primary btn-xs" })
+                            <button class="btn btn-danger btn-xs"
+                                    type="submit">
+                                Delete
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
     <div class="panel-heading">
         Tags
     </div>
-    </br>
-    </br>
+    <table class="table table-striped">
+        <tr><th>ID</th><th>Tag name</th><th>Course</th><th></th></tr>
+        @if (Model.AppUsers.Count() == 0)
+        {
+            <tr><td colspan="4" class="text-center">No User Accounts</td></tr>
+        }
+        else
+        {
+            foreach (Tag tag in Model.Tags)
+            {
+                <tr>
+                    <td>@tag.TagID</td>
+                    <td>@tag.Name</td>
+                    <td>@foreach (var course in tag.TagCourses)
+                    {
+                        //lol
+                        @(course.Title + " " + ", ");
+
+                    }</td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Admin", new { id = tag.TagID }))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = tag.TagID }, new { @class = "btn btn-primary btn-xs" })
+                            <button class="btn btn-danger btn-xs"
+                                    type="submit">
+                                Delete
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
 </div>
 @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Create Course", "Create","Course", null, new { @class = "btn btn-primary" })

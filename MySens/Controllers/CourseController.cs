@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using MySens.Infrastructure;
 using MySens.Models;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
+using System.Data.SqlClient;
 
 namespace MySens.Controllers
 {
@@ -17,15 +19,23 @@ namespace MySens.Controllers
         private AppIdentityDbContext db = new AppIdentityDbContext();
 
         // GET: Course
-        [Authorize(Roles = "Administrators")]
+      //  [Authorize(Roles = "Administrators")]
         public ActionResult Index()
         {
             var courses = db.Courses.Include(c => c.Teacher);
             return View(courses.ToList());
         }
-
+        public ActionResult Signup(int? id)
+        {
+            var studentid = new SqlParameter("@StudentID",CurrentUser.Id );
+            var courseid = new SqlParameter("@CourseID", id);
+            System.Diagnostics.Debug.WriteLine(id, CurrentUser.Id);
+            this.db.Database.ExecuteSqlCommand("exec EnrollStudent @StudentID , @CourseID" , studentid, courseid);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         // GET: Course/Details/5
-        [Authorize(Roles = "Administrators")]
+        // [Authorize(Roles = "Administrators")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -92,7 +102,8 @@ namespace MySens.Controllers
             if (course == null)
             {
                 return HttpNotFound();
-            }
+            }
+
 
             ViewBag.AppUserID = new SelectList(
             UserManager.Users
@@ -132,7 +143,8 @@ namespace MySens.Controllers
             // Tags check boxes
             PopulateTagsData(courseToUpdate);
             return View(courseToUpdate);
-        }
+        }
+
 
         // GET: Course/Delete/5
         [Authorize(Roles = "Administrators")]
@@ -164,7 +176,8 @@ namespace MySens.Controllers
             db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }
+
 
         public void UpdateCourseTags(string[] selectedTags, Course courseToUpdate)
         {
@@ -223,6 +236,13 @@ namespace MySens.Controllers
             get
             {
                 return HttpContext.GetOwinContext().GetUserManager<AppUserManager>();
+            }
+        }
+        private AppUser CurrentUser
+        {
+            get
+            {
+                return UserManager.FindByName(HttpContext.User.Identity.Name);
             }
         }
     }

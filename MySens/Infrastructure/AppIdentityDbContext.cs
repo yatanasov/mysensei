@@ -11,12 +11,10 @@ namespace MySens.Infrastructure
         public DbSet<Course> Courses { get; set; }
         public DbSet<Tag> Tags { get; set; }
         // Extra DbSet
-                                                  //public DbSet<Course> CoursesTeaching { get; set; } // Extra DbSet
-
 
         public AppIdentityDbContext() : base("IdentityDb") {
         }
-
+      
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AppUser>()

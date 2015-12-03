@@ -16,5 +16,10 @@
         <label>City</label>
         @Html.DropDownListFor(x => x.City, new SelectList(Enum.GetNames(typeof(Cities))))
     </div>
+            <p>
+        @Html.ActionLink("Create New Course", "Create")
+    </p>
+
+
     <button class="btn btn-primary" type="submit">Save</button>
 }
