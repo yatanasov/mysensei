@@ -65,37 +65,70 @@ namespace MySens.Controllers
             }
             return View(model);
         }
-      
 
-        // GET: AppUser/Edit/5
-        public ActionResult Edit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AppUser appUser = db.Users.Find(id);
-            if (appUser == null)
-            {
-                return HttpNotFound();
-            }
-            return View(appUser);
-        }
 
-        // POST: AppUser/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,City,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] AppUser appUser)
+        // Edit
+        public async Task<ActionResult> Edit(string id)
         {
-            if (ModelState.IsValid)
+            AppUser user = await UserManager.FindByIdAsync(id);
+            if (user != null)
             {
-                db.Entry(appUser).State = EntityState.Modified;
-                db.SaveChanges();
+                return View(user);
+            }
+            else
+            {
                 return RedirectToAction("Index");
             }
-            return View(appUser);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit(string id, string firstname, string lastname, string username, string email, string password)
+        {
+            AppUser user = await UserManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                user.FirstName = firstname;
+                user.LastName = lastname;
+                user.UserName = username;
+                user.Email = email;
+                IdentityResult validEmail = await UserManager.UserValidator.ValidateAsync(user);
+                if (!validEmail.Succeeded)
+                {
+                    AddErrorsFromResult(validEmail);
+                }
+
+                IdentityResult validPass = null;
+                if (password != string.Empty)
+                {
+                    validPass = await UserManager.PasswordValidator.ValidateAsync(password);
+                    if (validPass.Succeeded)
+                    {
+                        user.PasswordHash = UserManager.PasswordHasher.HashPassword(password);
+                    }
+                    else
+                    {
+                        AddErrorsFromResult(validPass);
+                    }
+                }
+
+                if ((validEmail.Succeeded && validPass == null) || (validEmail.Succeeded && password != string.Empty && validPass.Succeeded))
+                {
+                    IdentityResult result = await UserManager.UpdateAsync(user);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        AddErrorsFromResult(result);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "User Not Found");
+                }
+            }
+            return View(user);
         }
 
         // GET: AppUser/Delete/5
