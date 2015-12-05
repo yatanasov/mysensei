@@ -8,7 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using MySens.Infrastructure;
 using MySens.Models;
-
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
 namespace MySens.Controllers
 {
     public class AppUserController : Controller
@@ -42,22 +44,28 @@ namespace MySens.Controllers
             return View();
         }
 
-        // POST: AppUser/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+              
+        // Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,City,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] AppUser appUser)
+        public async Task<ActionResult> Create(CreateModel model)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(appUser);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                AppUser user = new AppUser { FirstName = model.FirstName, LastName = model.LastName, UserName = model.UserName, Email = model.Email };
+                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
-            return View(appUser);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index","Home",new { area = "" });
+                }
+                else
+                {
+                    AddErrorsFromResult(result);
+                }
+            }
+            return View(model);
         }
+      
 
         // GET: AppUser/Edit/5
         public ActionResult Edit(string id)
@@ -123,6 +131,21 @@ namespace MySens.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        private void AddErrorsFromResult(IdentityResult result)
+        {
+            foreach (string error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
+
+        private AppUserManager UserManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().GetUserManager<AppUserManager>();
+            }
         }
     }
 }

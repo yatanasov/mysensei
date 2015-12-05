@@ -25,6 +25,7 @@ namespace MySens.Controllers
             var courses = db.Courses.Include(c => c.Teacher);
             return View(courses.ToList());
         }
+
         public ActionResult Signup(int? id)
         {
             var studentid = new SqlParameter("@StudentID",CurrentUser.Id );
@@ -34,6 +35,7 @@ namespace MySens.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
         // GET: Course/Details/5
         // [Authorize(Roles = "Administrators")]
         public ActionResult Details(int? id)
@@ -108,7 +110,7 @@ namespace MySens.Controllers
             ViewBag.AppUserID = new SelectList(
             UserManager.Users
             .Where(u => u.Roles.Select(r => r.RoleId)
-            .Contains("50844948-9520-4322-9703-4764bb317d99"))
+            .Contains("2333165e-0f10-41e8-b22a-7e6be4b69a0f"))
             .ToList(), "Id", "UserName");
             return View(course);
         }
