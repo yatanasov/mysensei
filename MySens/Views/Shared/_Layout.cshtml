@@ -4,25 +4,64 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/sass/style1.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    <style>
-        .container {
-            padding-top: 10px;
-        }
-        .validation-summary-errors {
-            color: #f00;
-        }
-    </style>
 </head>
-<body class="container">
-    <div class="container">
-        @RenderBody()
+<body>
+    <header class="col-12">
+        <div id="logo" class="col-6">
+            <img src="../../Media/logo_i_vector_hvid.png" alt="Mysensei logo" class="col-6">
+        </div>
+
+        <nav class="navigation col-6">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="loginBtn"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="loginOverlay hidden nonExistent">
+        <img src="../../Media/logo_i_vector_hvid.png" alt="Mysensei logo">
+        <h2>Log in</h2>
+        <form>
+            <input type="text" name="username" placeholder="Username" required class="username"><br />
+            <input type="text" name="password" placeholder="Password" required class="password"><br />
+            <div class="col-6 remember">
+                <input type="checkbox" value="Remember me" name="remember"><p>Remember me</p>
+            </div>
+            <div class="col-6 forgotAndLogin">
+                <a href="#">Forgot password</a>
+                <input type="button" value="Login" name="login">
+            </div>
+
+        </form>
+        <div class="col-12">
+            <p>Don't have an account yet?</p>
+            <button name="signup" value="Sign up!" type="button">Sign up!</button>
+        </div>
+
     </div>
+    @RenderBody()
+
+    <footer class="col-12">
+        <div id="social">
+            <i class="fa fa-facebook-official"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-google-plus-square"></i>
+            <i class="fa fa-linkedin-square"></i>
+            <i class="fa fa-pinterest-square"></i>
+        </div>
+        <p>© Roxana, Yordan, Kamal, Robert</p>
+    </footer>
 
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
+
 </body>
 </html>
