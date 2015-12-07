@@ -1,19 +1,7 @@
 @model MySens.Models.LoginModel
-@{Layout = null;}
 @{ ViewBag.Title = "Login";}
-<!doctype html>
-<html>
-    <head>
-        <title>Login</title>
-        <link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
-        <link href="~/Content/font-awesome.css" rel="stylesheet" type="text/css" />
-        <link href="~/Content/sass/style1.css" rel="stylesheet" type="text/css" />
-        <link href="~/Content/sass/clearBg.css" rel="stylesheet" type="text/css" />
-        <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    </head>
-    <body>
-        <div class="loginModule">
-            <img src="http://kamalteta.com/Media/logo_i_vector_hvid.png" class="parentRedir" alt="Mysensei logo">
+
+        <div class="loginModule size100">
             <h2>Log In</h2>
             @Html.ValidationSummary()
             @using (Html.BeginForm())
@@ -35,12 +23,6 @@
                 </div>
             }
         </div>
-        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-        <script src="~/Scripts/script.js"></script>
-    </body>
-</html>
-
-
 
 
 <!--

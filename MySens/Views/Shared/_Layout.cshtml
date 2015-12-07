@@ -19,37 +19,10 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li class="loginBtn"><a href="#">Login</a></li>
+                <li class="loginBtn"><a href="../Account/Login">Login</a></li>
             </ul>
         </nav>
     </header>
-
-
-    <div class="loginOverlay hidden">
-        
-        <iframe src="../Account/Login"></iframe>
-    </div>
-    <div class="signupBg hidden">
-       
-        <div class="signup">
-
-            <img src="http://kamalteta.com/Media/logo_i_vector_hvid.png" alt="Mysensei logo">
-            <h2>Sign up</h2>
-            <form>
-                <input type="text" name="firstname" placeholder="First name" required>
-                <input type="text" name="lastname" placeholder="Last name" required>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="text" name="password" placeholder="Password" required>
-                <input type="text" name="repeat" placeholder="Repeat password" required>
-                <input type="email" name="email" placeholder="E-mail address" required>
-                <input type="checkbox" value="accept" name="accept"><p>I accept the terms and conditions</p>
-                <button name="signup" value="Sign up!" type="submit">Sign up!</button>
-            </form>
-            <hr>
-            <p>Already a member? <a href="#">Log in</a></p>
-
-        </div>
-    </div>
     
     @RenderBody()
 
