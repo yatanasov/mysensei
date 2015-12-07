@@ -177,78 +177,6 @@ body {
         body header nav ul li:nth-child(3) a:hover {
           border: 2px solid #ffffff;
           color: #ffffff; }
-  body .loginOverlay {
-    height: 50%;
-    width: 30%;
-    position: absolute;
-    z-index: 30;
-    background: rgba(255, 170, 99, 0.8);
-    top: 15%;
-    right: 30px;
-    text-align: center;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease; }
-    body .loginOverlay iframe {
-      height: 100%;
-      width: 100%; }
-  body .signupBg {
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    z-index: 40; }
-    body .signupBg .signup {
-      width: 50%;
-      height: 70%;
-      position: absolute;
-      top: 10%;
-      left: 25%;
-      background: #ffaa63;
-      padding: 30px;
-      z-index: 50; }
-      body .signupBg .signup h2 {
-        font-family: brush;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 88px; }
-      body .signupBg .signup input {
-        border: 0 !important;
-        background: #ffffff;
-        width: 66%;
-        font-size: 18px;
-        text-transform: none;
-        color: #555a5c;
-        padding-bottom: 3px;
-        padding-left: 5px;
-        margin-top: 10px; }
-      body .signupBg .signup button {
-        width: 100px;
-        font-size: 18px;
-        text-align: center;
-        background: #47b7b7;
-        color: #ffffff;
-        border: 0;
-        padding-bottom: 3px;
-        margin-top: 10px;
-        cursor: pointer; }
-        body .signupBg .signup button:hover {
-          background: #ffcb63; }
-      body .signupBg .signup p {
-        font-family: robot;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 18px; }
-      body .signupBg .signup a, body .signupBg .signup a:visited {
-        font-family: robot;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 18px; }
-        body .signupBg .signup a:hover, body .signupBg .signup a:active, body .signupBg .signup a:visited:hover, body .signupBg .signup a:visited:active {
-          font-family: robot;
-          font-weight: 400;
-          color: #ffcb63;
-          font-size: 18px; }
   body .landing {
     text-align: center;
     height: 100%; }
@@ -341,7 +269,7 @@ body {
     height: 50px;
     font-family: robot;
     padding-top: 20px;
-    margin-top: -50px; }
+    margin-top: -70px; }
     body footer #social {
       font-family: awesome;
       float: right;
@@ -482,68 +410,76 @@ hr {
 .nonExistent {
   display: none; }
 
-.loginModule img {
-  width: 80%;
-  height: auto; }
-.loginModule h2 {
-  font-family: brush;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 88px; }
-.loginModule p {
+.loginModule, .createUser {
+  text-align: center;
+  height: calc(100% - 130px);
+  padding-top: 130px;
+  width: 30%;
+  margin: 0 auto; }
+  .loginModule h2, .createUser h2 {
+    font-family: brush;
+    font-weight: 400;
+    color: #47b7b7;
+    font-size: 88px; }
+  .loginModule p, .createUser p, .loginModule li, .createUser li {
+    font-family: robot;
+    font-weight: 400;
+    color: #555a5c;
+    font-size: 18px; }
+  .loginModule div, .createUser div {
+    margin: 10px 0 10px 0; }
+  .loginModule input, .createUser input {
+    border: 0 !important;
+    background: #ffffff;
+    width: 66%;
+    font-size: 18px;
+    text-transform: none;
+    color: #555a5c;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    margin-top: 10px; }
+  .loginModule button, .createUser button {
+    width: 100px;
+    font-size: 18px;
+    text-align: center;
+    background: #47b7b7;
+    color: #ffffff;
+    border: 0;
+    padding-bottom: 3px;
+    margin-top: 20px;
+    cursor: pointer; }
+    .loginModule button:hover, .createUser button:hover {
+      background: #ffcb63; }
+  .loginModule .checkbox, .createUser .checkbox {
+    width: auto; }
+  .loginModule .remember, .createUser .remember {
+    display: inline;
+    margin-left: 5px; }
+  .loginModule .col-12, .createUser .col-12 {
+    border-top: solid 1px #555a5c;
+    margin-top: 30px;
+    padding-top: 30px; }
+  .loginModule .forgotAndLogin input, .createUser .forgotAndLogin input {
+    margin-top: 10px;
+    color: #ffffff;
+    background: #47b7b7;
+    border: 0;
+    width: 66%;
+    padding-bottom: 3px;
+    font-size: 18px; }
+    .loginModule .forgotAndLogin input:hover, .createUser .forgotAndLogin input:hover {
+      background: #ffcb63; }
+
+.createUser a, .createUser a:visited {
   font-family: robot;
   font-weight: 400;
-  color: #ffffff;
-  font-size: 18px; }
-.loginModule a, .loginModule a:visited {
-  font-family: robot;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 18px; }
-  .loginModule a:hover, .loginModule a:active, .loginModule a:visited:hover, .loginModule a:visited:active {
+  color: #ffaa63;
+  font-size: 18px;
+  margin-left: 10px; }
+  .createUser a:hover, .createUser a:active, .createUser a:visited:hover, .createUser a:visited:active {
     font-family: robot;
     font-weight: 400;
     color: #ffcb63;
     font-size: 18px; }
-.loginModule div {
-  margin: 10px 0 10px 0; }
-.loginModule .username, .loginModule .password {
-  border: 0 !important;
-  background: #ffffff;
-  width: 66%;
-  font-size: 18px;
-  text-transform: none;
-  color: #555a5c;
-  padding-bottom: 3px;
-  padding-left: 5px;
-  margin-top: 10px; }
-.loginModule button {
-  width: 100px;
-  font-size: 18px;
-  text-align: center;
-  background: #47b7b7;
-  color: #ffffff;
-  border: 0;
-  padding-bottom: 3px;
-  margin-top: 10px;
-  cursor: pointer; }
-  .loginModule button:hover {
-    background: #ffcb63; }
-.loginModule .col-12 {
-  border-top: 1px solid #555a5c;
-  padding-top: 10px; }
-.loginModule .remember p {
-  display: inline;
-  margin-left: 5px; }
-.loginModule .forgotAndLogin input {
-  margin-top: 10px;
-  color: #ffffff;
-  background: #47b7b7;
-  border: 0;
-  width: 66%;
-  padding-bottom: 3px;
-  font-size: 18px; }
-  .loginModule .forgotAndLogin input:hover {
-    background: #ffcb63; }
 
 /*# sourceMappingURL=style1.css.map */

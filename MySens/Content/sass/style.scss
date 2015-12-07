@@ -137,95 +137,6 @@ body{
 		}
 	}
 
-
-
-	.loginOverlay{
-		height:50%;
-		width:30%;
-		position:absolute;
-		z-index:30;
-		background:rgba(255,170,99,.8);
-		top:15%;
-		right:30px;
-		text-align:center;
-		-webkit-transition: all .3s ease;
-	    -moz-transition: all .3s ease;
-	    -o-transition: all .3s ease;
-
-	    iframe{
-	    	height:100%;
-	    	width:100%;
-
-	    	
-	    }
-	}
-
-	.signupBg{
-		height:100%;
-		width:100%;
-		background:$seeThru;
-		text-align:center;
-		z-index:40;
-
-
-		.signup {
-			width:50%;
-			height:70%;
-			position:absolute;
-			top:10%;
-			left:25%;
-			background:rgba(255,170,99,1);
-			padding:30px;
-			z-index:50;
-
-			h2{
-		    	@include heading($white,88);
-		    }
-
-		    input {
-		    border:0 !important;
-		    background: $white;
-		    width: 66%;
-		    font-size: 18px;
-			text-transform:none;
-			color:$txt;
-			padding-bottom:3px;
-			padding-left:5px;
-			margin-top:10px;
-			}
-
-		    button {
-				width:100px;
-				font-size:18px;
-				text-align:center;
-				background:$teal;
-				color:$white;
-				border:0;
-				padding-bottom:3px;
-				margin-top: 10px;
-				cursor:pointer;
-
-				&:hover{
-					background:$highlight;
-				}
-			}
-
-			p{
-		    	@include heading($white,18,robot);
-		    }
-
-		    a, a:visited{
-		    	@include heading($white,18,robot);
-
-		    	&:hover, &:active{
-		    		@include heading($highlight,18,robot);
-		    	}
-
-		    }
-		}
-	}
-	
-
 	.landing {
 		text-align:center;
 		height:100%;
@@ -349,7 +260,7 @@ body{
 		height:50px;
 		font-family:robot;
 		padding-top:20px;
-		margin-top:-50px;
+		margin-top:-70px;
 
 		#social {
 			font-family:awesome;
@@ -528,86 +439,94 @@ hr{
 }
 
 .loginModule {
-		    	img{
-			    	width:80%;
-			    	height:auto;
-			    }
+	text-align:center;
+	height:calc(100% - 130px);
+	padding-top:130px;
+	width:30%;
+	margin:0 auto;
 
-			    h2{
-			    	@include heading($white,88);
-			    }
+    h2{
+    	@include heading($teal,88);
+    }
 
-			    p{
-			    	@include heading($white,18,robot);
-			    }
+    p,li{
+    	@include heading($txt,18,robot);
+    }
 
-			    a, a:visited{
-			    	@include heading($white,18,robot);
 
-			    	&:hover, &:active{
-			    		@include heading($highlight,18,robot);
-			    	}
+    div {
+    	margin:10px 0 10px 0;
+    }
 
-			    }
+    input {
+	    border:0 !important;
+	    background: $white;
+	    width: 66%;
+	    font-size: 18px;
+		text-transform:none;
+		color:$txt;
+		padding-bottom:3px;
+		padding-left:5px;
+		margin-top:10px;
+	}
 
-			    div {
-			    	margin:10px 0 10px 0;
-			    }
+    button {
+		width:100px;
+		font-size:18px;
+		text-align:center;
+		background:$teal;
+		color:$white;
+		border:0;
+		padding-bottom:3px;
+		margin-top: 20px;
+		cursor:pointer;
 
-			    .username, .password {
-				    border:0 !important;
-				    background: $white;
-				    width: 66%;
-				    font-size: 18px;
-					text-transform:none;
-					color:$txt;
-					padding-bottom:3px;
-					padding-left:5px;
-					margin-top:10px;
-				}
+		&:hover{
+			background:$highlight;
+		}
+	}
+	.checkbox{
+		width:auto;
+	}
+	.remember{
+			display:inline;
+			margin-left:5px;
+	}
 
-			    button {
-					width:100px;
-					font-size:18px;
-					text-align:center;
-					background:$teal;
-					color:$white;
-					border:0;
-					padding-bottom:3px;
-					margin-top: 10px;
-					cursor:pointer;
+	.col-12 {
+		border-top:solid 1px $txt;
+		margin-top:30px;
+		padding-top:30px;
+	}
 
-					&:hover{
-						background:$highlight;
-					}
-				}
+	.forgotAndLogin{
+		input{
+			margin-top:10px;
+			color:$white;
+			background:$teal;
+			border:0;
+			width:66%;
+			padding-bottom:3px;
+			font-size:18px;
 
-				.col-12{
-					border-top:1px solid $txt;
-					padding-top:10px;
-				}
+			&:hover{
+				background:$highlight;
+			}
+		}
+	}
 
-				.remember{
-					p{
-						display:inline;
-						margin-left:5px;
-					}
-				}
+}
 
-				.forgotAndLogin{
-					input{
-						margin-top:10px;
-						color:$white;
-						background:$teal;
-						border:0;
-						width:66%;
-						padding-bottom:3px;
-						font-size:18px;
+.createUser{
+	@extend .loginModule;
 
-						&:hover{
-							background:$highlight;
-						}
-					}
-				}
+	
+    a, a:visited{
+    	@include heading($accent,18,robot);
+    	margin-left:10px;
 
-	    	}
+    	&:hover, &:active{
+    		@include heading($highlight,18,robot);
+    	}
+    }
+}

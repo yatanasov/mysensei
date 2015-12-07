@@ -9,18 +9,18 @@
                 @Html.AntiForgeryToken();
                 <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
                 <div class="form-group">
-                    <label>Name</label>
-                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.UserName, new { @placeholder = "Name" })
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                    @Html.PasswordFor(x => x.Password, new { @placeholder = "Password" })
                 </div>
+                <input type="checkbox" value="Remember me" name="remember" class="checkbox"><p class="remember">Remember me</p><br/>
                 <button class="btn btn-primary" type="submit">Log In</button>
                 <div class="col-12">
                     <p>Don't have an account yet?</p>
-                    <button name="signup" value="Sign up!" type="button" class="signupBtn">Sign up!</button>
+                    <a href="../AppUser/Create"><button name="signup" value="Sign up!" type="button" class="signupBtn">Sign up!</button></a>
                 </div>
+                
             }
         </div>
 
@@ -34,7 +34,7 @@
             <input type="text" name="username" placeholder="Username" required class="username"><br />
             <input type="text" name="password" placeholder="Password" required class="password"><br />
             <div class="col-6 remember">
-                <input type="checkbox" value="Remember me" name="remember"><p>Remember me</p>
+                
             </div>
             <div class="col-6 forgotAndLogin">
                 <a href="#">Forgot password</a>
