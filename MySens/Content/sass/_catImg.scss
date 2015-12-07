@@ -2,7 +2,7 @@ $numberOfCats: 8;
 
 @for $i from 1 through $numberOfCats {
 	.cat#{$i} {
-		background:url('../../Media/cat#{$i}.jpg');
+		background:url('http://kamalteta.com/Media/cat#{$i}.jpg');
 		background-size:cover;
 	}
 }

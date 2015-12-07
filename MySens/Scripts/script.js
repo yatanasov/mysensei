@@ -3,6 +3,7 @@
 	var loginBtn = document.querySelector('.loginBtn');
 	var loginOverlay = document.querySelector('.loginOverlay');
 	var signup = document.querySelector('.signup');
+	var signupBg = document.querySelector('.signupBg');
 	var signupBtn = document.querySelector('.signupBtn');
 	var landing = document.querySelector('.landing');
 	var howItWorksBtn = document.querySelector('.howItWorks');
@@ -12,20 +13,35 @@
 	var rotator = document.querySelector('.buffer');
 
 
+
 	loginBtn.onclick=function(e){
 		e.preventDefault();
-		loginOverlay.classList.toggle('nonExistent');
 		loginOverlay.classList.toggle('hidden');
+		signupBg.classList.add('hidden');
+
+		var parDir = document.querySelector('.parentRedir');
+
+		parDir.onclick=function(){
+			console.log('hey');
+		}
+
 
 		landing.onclick=function(){
 			loginOverlay.classList.add('hidden');
-			loginOverlay.classList.add('nonExistent');
 		}
 
-		signupBtn.onclick=function(){
+		signupBtn.onclick=function(e){
+			e.preventDefault();
 			loginOverlay.classList.add('hidden');
-			signup.classList.remove('hidden');
-			signup.classList.remove('nonExistent');
+			signupBg.classList.remove('hidden');
+		}
+
+		signupBg.onclick=function(){
+			signupBg.classList.add('hidden');
+		}
+
+		signup.onclick=function(e){
+			e.stopPropagation();
 		}
 
 		loginOverlay.onclick=function(e){

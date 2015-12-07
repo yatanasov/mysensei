@@ -1,18 +1,67 @@
 @model MySens.Models.LoginModel
+@{Layout = null;}
 @{ ViewBag.Title = "Login";}
-<h2>Log In</h2>
-@Html.ValidationSummary()
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken();
-    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
-    <div class="form-group">
-        <label>Name</label>
-        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
-    </div>
-    <button class="btn btn-primary" type="submit">Log In</button>
-}
+<!doctype html>
+<html>
+    <head>
+        <title>Login</title>
+        <link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/font-awesome.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/sass/style1.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/sass/clearBg.css" rel="stylesheet" type="text/css" />
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    </head>
+    <body>
+        <div class="loginModule">
+            <img src="http://kamalteta.com/Media/logo_i_vector_hvid.png" class="parentRedir" alt="Mysensei logo">
+            <h2>Log In</h2>
+            @Html.ValidationSummary()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken();
+                <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+                <div class="form-group">
+                    <label>Name</label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <button class="btn btn-primary" type="submit">Log In</button>
+                <div class="col-12">
+                    <p>Don't have an account yet?</p>
+                    <button name="signup" value="Sign up!" type="button" class="signupBtn">Sign up!</button>
+                </div>
+            }
+        </div>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/script.js"></script>
+    </body>
+</html>
+
+
+
+
+<!--
+     
+
+    <img src="http://kamalteta.com/Media/logo_i_vector_hvid.png" alt="Mysensei logo">
+        <h2>Log in</h2>
+        <form>
+            <input type="text" name="username" placeholder="Username" required class="username"><br />
+            <input type="text" name="password" placeholder="Password" required class="password"><br />
+            <div class="col-6 remember">
+                <input type="checkbox" value="Remember me" name="remember"><p>Remember me</p>
+            </div>
+            <div class="col-6 forgotAndLogin">
+                <a href="#">Forgot password</a>
+                <input type="button" value="Login" name="login">
+            </div>
+
+        </form>
+        <div class="col-12">
+            <p>Don't have an account yet?</p>
+            <button name="signup" value="Sign up!" type="button" class="signupBtn">Sign up!</button>
+        </div>
+-->

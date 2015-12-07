@@ -25,45 +25,32 @@
     </header>
 
 
-    <div class="loginOverlay hidden nonExistent">
-        <img src="http://kamalteta.com/Media/logo_i_vector_hvid.png" alt="Mysensei logo">
-        <h2>Log in</h2>
-        <form>
-            <input type="text" name="username" placeholder="Username" required class="username"><br />
-            <input type="text" name="password" placeholder="Password" required class="password"><br />
-            <div class="col-6 remember">
-                <input type="checkbox" value="Remember me" name="remember"><p>Remember me</p>
-            </div>
-            <div class="col-6 forgotAndLogin">
-                <a href="#">Forgot password</a>
-                <input type="button" value="Login" name="login">
-            </div>
+    <div class="loginOverlay hidden">
+        
+        <iframe src="../Account/Login"></iframe>
+    </div>
+    <div class="signupBg hidden">
+       
+        <div class="signup">
 
-        </form>
-        <div class="col-12">
-            <p>Don't have an account yet?</p>
-            <button name="signup" value="Sign up!" type="button" class="signupBtn">Sign up!</button>
+            <img src="http://kamalteta.com/Media/logo_i_vector_hvid.png" alt="Mysensei logo">
+            <h2>Sign up</h2>
+            <form>
+                <input type="text" name="firstname" placeholder="First name" required>
+                <input type="text" name="lastname" placeholder="Last name" required>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="text" name="password" placeholder="Password" required>
+                <input type="text" name="repeat" placeholder="Repeat password" required>
+                <input type="email" name="email" placeholder="E-mail address" required>
+                <input type="checkbox" value="accept" name="accept"><p>I accept the terms and conditions</p>
+                <button name="signup" value="Sign up!" type="submit">Sign up!</button>
+            </form>
+            <hr>
+            <p>Already a member? <a href="#">Log in</a></p>
+
         </div>
-
     </div>
-    <div class="signup hidden nonExistent">
-
-        <img src="#" alt="Mysensei logo">
-        <h1>Sign up</h1>
-        <form>
-            <input type="text" name="firstname" placeholder="First name" required>
-            <input type="text" name="lastname" placeholder="Last name" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="text" name="password" placeholder="Password" required>
-            <input type="text" name="repeat" placeholder="Repeat password" required>
-            <input type="email" name="email" placeholder="E-mail address" required>
-            <input type="checkbox" value="accept" name="accept">I accept the terms and conditions
-            <input type="submit" value="Sign up!" name="signup">
-        </form>
-        <hr>
-        <p>Already a member? <a href="#">Log in</a></p>
-
-    </div>
+    
     @RenderBody()
 
     <footer class="col-12">
