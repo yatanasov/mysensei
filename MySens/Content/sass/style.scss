@@ -530,3 +530,11 @@ hr{
     	}
     }
 }
+
+.userPage {
+	@extend .createUser;
+
+	.col-12{
+		border-top:0;
+	}
+}

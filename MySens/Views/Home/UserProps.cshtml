@@ -1,55 +1,67 @@
 ﻿@using MySens.Models
 @model MySens.Models.AppUser
 
-@{ ViewBag.Title = "UserProps";}  ADVANCED ASP.NET IDENTITY
-6
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        Custom User Properties
+@{ ViewBag.Title = "UserProps";}
+<div class="size100 userPage">
+    <div class="col-12">
+        <div class="col-4">
+            Hello
+        </div>
+        <div class="col-8">
+            World.
+        </div>
     </div>
-    <table class="table table-striped">
-        <tr><th>Name</th><td>@Model.FirstName  @Model.LastName</td></tr>
-        <tr><th>City</th><td>@Model.City</td></tr>
-        <tr><th>About</th><td>@Model.About</td></tr>
-        <tr><th>E-mail</th><td>@Model.Email</td></tr>
-        <tr><th>Phone Number</th><td>@Model.PhoneNumber</td></tr>
-    </table>
 </div>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        User Verifications
+<!--
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            Custom User Properties
+        </div>
+        <table class="table table-striped">
+            <tr><th>Name</th><td>@Model.FirstName  @Model.LastName</td></tr>
+            <tr><th>City</th><td>@Model.City</td></tr>
+            <tr><th>About</th><td>@Model.About</td></tr>
+            <tr><th>E-mail</th><td>@Model.Email</td></tr>
+            <tr><th>Phone Number</th><td>@Model.PhoneNumber</td></tr>
+        </table>
     </div>
-    <table class="table table-striped">
-        <tr><th>E-mail Confirmed</th><td>@Model.EmailConfirmed</td></tr>
-        <tr><th>Phone Number Confirmed</th><td>@Model.PhoneNumberConfirmed</td></tr>
-    </table>
-</div>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        Courses I teach
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            User Verifications
+        </div>
+        <table class="table table-striped">
+            <tr><th>E-mail Confirmed</th><td>@Model.EmailConfirmed</td></tr>
+            <tr><th>Phone Number Confirmed</th><td>@Model.PhoneNumberConfirmed</td></tr>
+        </table>
     </div>
-    <table class="table table-striped"></table>
-</div>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        Course I am enrolled in
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Courses I teach
+        </div>
+        <table class="table table-striped"></table>
     </div>
-    <table class="table table-striped"></table>
-</div>
 
-@using (Html.BeginForm())
-{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Course I am enrolled in
+        </div>
+        <table class="table table-striped"></table>
+    </div>
 
-    <p>
-        @Html.ActionLink("Create New Course", "Create")
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
-    </p>
+    @using (Html.BeginForm())
+    {
+
+        <p>
+            @Html.ActionLink("Create New Course", "Create")
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+        </p>
 
 
-    <button class="btn btn-primary" type="submit">Save</button>
-}
+        <button class="btn btn-primary" type="submit">Save</button>
+    }
+-->
 
 
