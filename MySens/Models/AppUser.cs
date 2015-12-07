@@ -13,7 +13,7 @@ namespace MySens.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Cities City { get; set; }
-       // public string Email { get; set; }
+        public string About { get; set; }
         //public int PhoneNumber { get; set; }
        // public string PasswordHash { get; set; }
        // public string UserName { get; set; }
