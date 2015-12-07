@@ -66,10 +66,10 @@
                 @Html.DisplayFor(modelItem => item.NumberOfLessons)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
-                @Html.ActionLink("Sign Up", "Signup", new { id = item.CourseID })
+                @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })*@
+                @Html.ActionLink("Sign Up", "Signup", new { id = item.CourseID }, new { onclick = "return confirm('You have now signed up for this course. The teacher will contact you shortly.');" })
             </td>
         </tr>
     }
