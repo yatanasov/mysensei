@@ -536,5 +536,57 @@ hr {
 			ADMIN MANAGEMENT PAGE END
 ***********************************************
 ***********************************************/
+#pos_about {
+  min-height: 100%;
+  margin-bottom: 70px; }
+  #pos_about h2 {
+    font-family: brush;
+    font-weight: 400;
+    color: #47b7b7;
+    font-size: 88px;
+    position: absolute; }
+  #pos_about .about-sec {
+    width: 100%; }
+    #pos_about .about-sec h2 {
+      top: 35%;
+      left: 22%;
+      color: #ffffff; }
+    #pos_about .about-sec article {
+      width: 500px;
+      color: #ffffff;
+      font-family: robot;
+      font-size: 24px;
+      line-height: 1.5;
+      position: absolute;
+      top: 50%;
+      left: 15%; }
+    #pos_about .about-sec .bin {
+      width: 100%; }
+
+.contact-sec {
+  width: 100%; }
+  .contact-sec h2 {
+    left: 15%;
+    top: 165%; }
+  .contact-sec #orangebox {
+    background-color: #ffcb63;
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    top: 175%;
+    left: 15%; }
+    .contact-sec #orangebox #logpos {
+      width: 100%;
+      text-align: center;
+      color: #ffffff; }
+      .contact-sec #orangebox #logpos img {
+        width: 40%;
+        padding: 20px; }
+      .contact-sec #orangebox #logpos p {
+        margin: 0 auto;
+        font-family: robot;
+        font-size: 24px;
+        width: 200px;
+        padding: 15px; }
 
 /*# sourceMappingURL=style2.css.map */
