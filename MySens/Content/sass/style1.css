@@ -212,6 +212,35 @@ body {
         color: #ffaa63;
         border: 3px solid #ffaa63;
         cursor: pointer; }
+  body .topCourses {
+    font-family: robot;
+    font-weight: 400;
+    color: #555a5c;
+    font-size: 18px;
+    padding: 60px 30px 0 30px;
+    background: -moz-linear-gradient(top, #eaeaea, #eaeaea 20%, #ffffff 20%, #ffffff 80%, #eaeaea 80%, #eaeaea);
+    width: calc(100% - 60px); }
+    body .topCourses h2 {
+      font-family: brush;
+      font-weight: 400;
+      color: #47b7b7;
+      font-size: 88px;
+      text-align: center; }
+    body .topCourses table {
+      margin: 10% auto; }
+      body .topCourses table td {
+        padding-bottom: 20px;
+        padding-right: 30px; }
+    body .topCourses a {
+      font-family: robot;
+      font-weight: 400;
+      color: #ffaa63;
+      font-size: 18px; }
+      body .topCourses a:hover {
+        font-family: robot;
+        font-weight: 400;
+        color: #ffcb63;
+        font-size: 18px; }
   body #testimonials {
     background: -moz-linear-gradient(top, #eaeaea, #eaeaea 20%, #ffffff 20%, #ffffff 80%, #eaeaea 80%, #eaeaea); }
     body #testimonials .tBtn {
@@ -345,17 +374,19 @@ body {
     color: #555a5c;
     padding-bottom: 3px;
     margin: 0 5px 0 5px; }
-  #wrapper1 button {
-    width: 100px;
+  #wrapper1 .searchBtn {
+    font-family: robot;
+    font-weight: 400;
+    color: #ffffff;
     font-size: 18px;
     text-align: center;
     background: #ffaa63;
-    color: #ffffff;
     border: 0;
-    padding-bottom: 3px;
+    padding: 2px 10px 3px 10px;
     margin: 0 5px 0 5px;
-    cursor: pointer; }
-    #wrapper1 button:hover {
+    cursor: pointer;
+    text-decoration: none; }
+    #wrapper1 .searchBtn:hover {
       background: #ffcb63; }
 
 #categories, #testimonials, #howitworks {
@@ -418,25 +449,25 @@ hr {
 .nonExistent {
   display: none; }
 
-.loginModule, .createUser, .userPage {
+.loginModule, .createUser, .profilePage {
   text-align: center;
   height: calc(100% - 130px);
   padding-top: 130px;
   width: 30%;
   margin: 0 auto; }
-  .loginModule h2, .createUser h2, .userPage h2 {
+  .loginModule h2, .createUser h2, .profilePage h2 {
     font-family: brush;
     font-weight: 400;
     color: #47b7b7;
     font-size: 88px; }
-  .loginModule p, .createUser p, .userPage p, .loginModule li, .createUser li, .userPage li {
+  .loginModule p, .createUser p, .profilePage p, .loginModule li, .createUser li, .profilePage li {
     font-family: robot;
     font-weight: 400;
     color: #555a5c;
     font-size: 18px; }
-  .loginModule div, .createUser div, .userPage div {
+  .loginModule div, .createUser div, .profilePage div {
     margin: 10px 0 10px 0; }
-  .loginModule input, .createUser input, .userPage input {
+  .loginModule input, .createUser input, .profilePage input {
     border: 0 !important;
     background: #ffffff;
     width: 66%;
@@ -446,7 +477,7 @@ hr {
     padding-bottom: 3px;
     padding-left: 5px;
     margin-top: 10px; }
-  .loginModule button, .createUser button, .userPage button {
+  .loginModule button, .createUser button, .profilePage button {
     width: 100px;
     font-size: 18px;
     text-align: center;
@@ -456,18 +487,18 @@ hr {
     padding-bottom: 3px;
     margin-top: 20px;
     cursor: pointer; }
-    .loginModule button:hover, .createUser button:hover, .userPage button:hover {
+    .loginModule button:hover, .createUser button:hover, .profilePage button:hover {
       background: #ffcb63; }
-  .loginModule .checkbox, .createUser .checkbox, .userPage .checkbox {
+  .loginModule .checkbox, .createUser .checkbox, .profilePage .checkbox {
     width: auto; }
-  .loginModule .remember, .createUser .remember, .userPage .remember {
+  .loginModule .remember, .createUser .remember, .profilePage .remember {
     display: inline;
     margin-left: 5px; }
-  .loginModule .col-12, .createUser .col-12, .userPage .col-12 {
+  .loginModule .col-12, .createUser .col-12, .profilePage .col-12 {
     border-top: solid 1px #555a5c;
     margin-top: 30px;
     padding-top: 30px; }
-  .loginModule .forgotAndLogin input, .createUser .forgotAndLogin input, .userPage .forgotAndLogin input {
+  .loginModule .forgotAndLogin input, .createUser .forgotAndLogin input, .profilePage .forgotAndLogin input {
     margin-top: 10px;
     color: #ffffff;
     background: #47b7b7;
@@ -475,34 +506,34 @@ hr {
     width: 66%;
     padding-bottom: 3px;
     font-size: 18px; }
-    .loginModule .forgotAndLogin input:hover, .createUser .forgotAndLogin input:hover, .userPage .forgotAndLogin input:hover {
+    .loginModule .forgotAndLogin input:hover, .createUser .forgotAndLogin input:hover, .profilePage .forgotAndLogin input:hover {
       background: #ffcb63; }
 
-.createUser a, .userPage a, .createUser a:visited, .userPage a:visited {
+.createUser a, .profilePage a, .createUser a:visited, .profilePage a:visited {
   font-family: robot;
   font-weight: 400;
   color: #ffaa63;
   font-size: 18px;
   margin-left: 10px; }
-  .createUser a:hover, .userPage a:hover, .createUser a:active, .userPage a:active, .createUser a:visited:hover, .userPage a:visited:hover, .createUser a:visited:active, .userPage a:visited:active {
+  .createUser a:hover, .profilePage a:hover, .createUser a:active, .profilePage a:active, .createUser a:visited:hover, .profilePage a:visited:hover, .createUser a:visited:active, .profilePage a:visited:active {
     font-family: robot;
     font-weight: 400;
     color: #ffcb63;
     font-size: 18px; }
 
-.userPage {
+.profilePage {
   text-align: left; }
-  .userPage .col-12 {
+  .profilePage .col-12 {
     border-top: 0;
     margin-top: 0;
     padding: 0 30px 0 30px;
     width: calc(100% - 60px); }
-  .userPage .col-4, .userPage .col-8 {
+  .profilePage .col-4, .profilePage .col-8 {
     margin-top: 0; }
-    .userPage .col-4 .col-12, .userPage .col-8 .col-12 {
+    .profilePage .col-4 .col-12, .profilePage .col-8 .col-12 {
       padding: 0;
       width: 100%; }
-  .userPage .profileUserImage {
+  .profilePage .profileUserImage {
     margin: 15px auto;
     height: 200px;
     width: 200px;
@@ -510,40 +541,69 @@ hr {
     background-size: cover;
     border-radius: 50%;
     margin-bottom: 30px; }
-  .userPage table {
+  .profilePage table {
     margin-top: 30px; }
-  .userPage th, .userPage td {
+  .profilePage th, .profilePage td {
     padding: 10px; }
-  .userPage hr {
+  .profilePage hr {
     margin: 30px 0 30px 0; }
-  .userPage i {
+  .profilePage i {
     text-align: center;
     width: 100%;
     font-size: 72px;
     margin-top: 10px;
     color: #47b7b7; }
-  .userPage h2 {
+  .profilePage h2 {
     font-family: brush;
     font-weight: 400;
     color: #555a5c;
     font-size: 56px; }
-  .userPage .userPageName {
+  .profilePage .userPageName {
     font-family: brush;
     font-weight: 400;
     color: #47b7b7;
     font-size: 88px; }
-  .userPage .review {
+  .profilePage .review {
     width: 35%;
     margin: 0 auto; }
-    .userPage .review span {
+    .profilePage .review span {
       float: right; }
-  .userPage .userPageClassesTable {
+  .profilePage .userPageClassesTable {
     font-family: robot;
     font-weight: 400;
     color: #555a5c;
     font-size: 18px; }
-    .userPage .userPageClassesTable td {
+    .profilePage .userPageClassesTable td {
       padding-right: 30px;
       padding-left: 0; }
+
+.course {
+  font-family: robot;
+  font-weight: 400;
+  color: #555a5c;
+  font-size: 18px;
+  padding-top: 130px;
+  width: calc(100% - 60px); }
+  .course h2 {
+    font-family: brush;
+    font-weight: 400;
+    color: #47b7b7;
+    font-size: 88px;
+    text-align: center; }
+  .course table {
+    margin: 10% auto; }
+    .course table td {
+      padding-bottom: 20px;
+      padding-right: 30px; }
+  .course a {
+    font-family: robot;
+    font-weight: 400;
+    color: #ffaa63;
+    font-size: 18px; }
+    .course a:hover {
+      font-family: robot;
+      font-weight: 400;
+      color: #ffcb63;
+      font-size: 18px; }
 
 /*# sourceMappingURL=style1.css.map */
