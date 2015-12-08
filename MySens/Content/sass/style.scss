@@ -123,7 +123,7 @@ body{
 				}				
 			}
 
-			li:nth-child(3) a {
+			a li {
 				margin-left:10px;
 				padding:6px 17px 6px 17px;
 				border:2px solid $accent;
@@ -133,6 +133,15 @@ body{
 					border:2px solid $white;
 					color:$white;
 				}
+			}
+		}
+
+		.loggedIn{
+			@include heading($accent, 20);
+			border:0;
+
+			&:hover{
+				border:0;
 			}
 		}
 	}
@@ -533,8 +542,74 @@ hr{
 
 .userPage {
 	@extend .createUser;
+	text-align:left;
 
 	.col-12{
 		border-top:0;
+		margin-top:0;
+		padding:0 30px 0 30px;
+		width:calc(100% - 60px);
+
 	}
+	.col-4,.col-8{
+		margin-top:0;
+
+		.col-12{
+		padding:0;
+		width:100%;
+		}
+	}
+
+	.profileUserImage {
+		margin:15px auto;
+		height:200px;
+		width:200px;
+		background-image:url('http://kamalteta.com/Media/french.jpg');
+		background-size:cover;
+		border-radius:50%;
+		margin-bottom:30px;
+	}
+	table{
+		margin-top:30px;
+	}
+	th,td{
+		padding:10px;
+	}
+
+	hr{
+		margin:30px 0 30px 0;
+	}
+
+	i{
+		text-align:center;
+		width:100%;
+		font-size:72px;
+		margin-top:10px;
+		color:$teal;
+	}
+
+	h2{
+		@include heading($txt,56);
+	}
+
+	.userPageName{
+		@include heading($teal,88);
+	}
+
+	.review{
+		width:35%;
+		margin:0 auto;
+		span{
+			float:right;
+		}
+	}
+
+	.userPageClassesTable{
+		@include heading($txt,18,robot);
+		td{
+			padding-right:30px;
+			padding-left:0;
+		}
+	}
+	
 }

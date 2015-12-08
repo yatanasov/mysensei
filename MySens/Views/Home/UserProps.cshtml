@@ -1,16 +1,50 @@
 ﻿@using MySens.Models
 @model MySens.Models.AppUser
 
+
 @{ ViewBag.Title = "UserProps";}
 <div class="size100 userPage">
     <div class="col-12">
         <div class="col-4">
-            Hello
+            <div class="profileUserImage"></div>
+            <h2>Verification:</h2>
+            <i class="fa fa-check-circle-o"></i>
+            <div class="col-12">
+                <hr />
+                <h2>Contact info:</h2>
+                <table>
+                    <tr><th><p>E-mail</p></th><td><p>@Model.Email</p></td></tr>
+                    <tr><th><p>Phone Number</p></th><td><p>@Model.PhoneNumber</p></td></tr>
+                    <tr><th><p>City</p></th><td><p>@Model.City</p></td></tr>
+                </table>
+            </div>
         </div>
         <div class="col-8">
-            World.
+            <h2 class="userPageName">@Model.FirstName  @Model.LastName</h2>
+            <h2>About</h2>
+            <p>@Model.About</p>
+
+            <div class="col-12">
+                <hr />
+                <h2>Active Courses:</h2>
+                <table class="userPageClassesTable">
+                    <tr><td>Course name:</td><td>Teacher:</td><td>Started on:</td></tr>
+                    <tr><td>Guitar</td><td>Santana</td><td>25/11/15</td></tr>
+                    <tr><td>Cooking</td><td>Gordon Ramsey</td><td>06/08/15</td></tr>
+                    <tr><td>Coding</td><td>Bill Gates</td><td>05/06/15</td></tr>
+                </table>
+            </div>
+
+            <div class="col-12">
+                <hr />
+                <h2>Reviews:</h2>
+                <p class="review">"@Model.FirstName is a really cool dude"<br /><span>- not-@Model.FirstName</span> </ p ><br /><br />
+                <p class="review">"@Model.FirstName is the best teacher to have walked the face of the earth"<br /><span>- totally-not-@Model.FirstName</span> </ p >
+            </div>
         </div>
     </div>
+
+
 </div>
 
 <!--
@@ -63,5 +97,3 @@
         <button class="btn btn-primary" type="submit">Save</button>
     }
 -->
-
-

@@ -169,14 +169,22 @@ body {
             color: #ffaa63; }
           body header nav ul li a:active {
             color: #ffaa63; }
-      body header nav ul li:nth-child(3) a {
+      body header nav ul a li {
         margin-left: 10px;
         padding: 6px 17px 6px 17px;
         border: 2px solid #ffaa63;
         color: #ffaa63; }
-        body header nav ul li:nth-child(3) a:hover {
+        body header nav ul a li:hover {
           border: 2px solid #ffffff;
           color: #ffffff; }
+    body header .loggedIn {
+      font-family: brush;
+      font-weight: 400;
+      color: #ffaa63;
+      font-size: 20px;
+      border: 0; }
+      body header .loggedIn:hover {
+        border: 0; }
   body .landing {
     text-align: center;
     height: 100%; }
@@ -482,7 +490,60 @@ hr {
     color: #ffcb63;
     font-size: 18px; }
 
-.userPage .col-12 {
-  border-top: 0; }
+.userPage {
+  text-align: left; }
+  .userPage .col-12 {
+    border-top: 0;
+    margin-top: 0;
+    padding: 0 30px 0 30px;
+    width: calc(100% - 60px); }
+  .userPage .col-4, .userPage .col-8 {
+    margin-top: 0; }
+    .userPage .col-4 .col-12, .userPage .col-8 .col-12 {
+      padding: 0;
+      width: 100%; }
+  .userPage .profileUserImage {
+    margin: 15px auto;
+    height: 200px;
+    width: 200px;
+    background-image: url("http://kamalteta.com/Media/french.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    margin-bottom: 30px; }
+  .userPage table {
+    margin-top: 30px; }
+  .userPage th, .userPage td {
+    padding: 10px; }
+  .userPage hr {
+    margin: 30px 0 30px 0; }
+  .userPage i {
+    text-align: center;
+    width: 100%;
+    font-size: 72px;
+    margin-top: 10px;
+    color: #47b7b7; }
+  .userPage h2 {
+    font-family: brush;
+    font-weight: 400;
+    color: #555a5c;
+    font-size: 56px; }
+  .userPage .userPageName {
+    font-family: brush;
+    font-weight: 400;
+    color: #47b7b7;
+    font-size: 88px; }
+  .userPage .review {
+    width: 35%;
+    margin: 0 auto; }
+    .userPage .review span {
+      float: right; }
+  .userPage .userPageClassesTable {
+    font-family: robot;
+    font-weight: 400;
+    color: #555a5c;
+    font-size: 18px; }
+    .userPage .userPageClassesTable td {
+      padding-right: 30px;
+      padding-left: 0; }
 
 /*# sourceMappingURL=style1.css.map */

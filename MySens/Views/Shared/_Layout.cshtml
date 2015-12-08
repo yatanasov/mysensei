@@ -21,7 +21,14 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li class="loginBtn"><a href="../Account/Login">Login</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="../Home/UserProps"><li class="loggedIn"><i class="fa fa-user"></i></li></a>
+                }
+                else
+                {
+                    <a href="../Account/Login"><li class="loginBtn">Login</li></a>
+                }
             </ul>
         </nav>
     </header>
