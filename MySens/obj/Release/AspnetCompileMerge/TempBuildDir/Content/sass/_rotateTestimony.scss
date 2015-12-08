@@ -1,0 +1,7 @@
+$numberOfTestimonies: 5;
+
+@for $i from 1 through $numberOfTestimonies {
+	.test#{$i} {
+		left: $i * 33%;
+	}
+}
