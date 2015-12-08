@@ -410,25 +410,25 @@ hr {
 .nonExistent {
   display: none; }
 
-.loginModule, .createUser {
+.loginModule, .createUser, .userPage {
   text-align: center;
   height: calc(100% - 130px);
   padding-top: 130px;
   width: 30%;
   margin: 0 auto; }
-  .loginModule h2, .createUser h2 {
+  .loginModule h2, .createUser h2, .userPage h2 {
     font-family: brush;
     font-weight: 400;
     color: #47b7b7;
     font-size: 88px; }
-  .loginModule p, .createUser p, .loginModule li, .createUser li {
+  .loginModule p, .createUser p, .userPage p, .loginModule li, .createUser li, .userPage li {
     font-family: robot;
     font-weight: 400;
     color: #555a5c;
     font-size: 18px; }
-  .loginModule div, .createUser div {
+  .loginModule div, .createUser div, .userPage div {
     margin: 10px 0 10px 0; }
-  .loginModule input, .createUser input {
+  .loginModule input, .createUser input, .userPage input {
     border: 0 !important;
     background: #ffffff;
     width: 66%;
@@ -438,7 +438,7 @@ hr {
     padding-bottom: 3px;
     padding-left: 5px;
     margin-top: 10px; }
-  .loginModule button, .createUser button {
+  .loginModule button, .createUser button, .userPage button {
     width: 100px;
     font-size: 18px;
     text-align: center;
@@ -448,18 +448,18 @@ hr {
     padding-bottom: 3px;
     margin-top: 20px;
     cursor: pointer; }
-    .loginModule button:hover, .createUser button:hover {
+    .loginModule button:hover, .createUser button:hover, .userPage button:hover {
       background: #ffcb63; }
-  .loginModule .checkbox, .createUser .checkbox {
+  .loginModule .checkbox, .createUser .checkbox, .userPage .checkbox {
     width: auto; }
-  .loginModule .remember, .createUser .remember {
+  .loginModule .remember, .createUser .remember, .userPage .remember {
     display: inline;
     margin-left: 5px; }
-  .loginModule .col-12, .createUser .col-12 {
+  .loginModule .col-12, .createUser .col-12, .userPage .col-12 {
     border-top: solid 1px #555a5c;
     margin-top: 30px;
     padding-top: 30px; }
-  .loginModule .forgotAndLogin input, .createUser .forgotAndLogin input {
+  .loginModule .forgotAndLogin input, .createUser .forgotAndLogin input, .userPage .forgotAndLogin input {
     margin-top: 10px;
     color: #ffffff;
     background: #47b7b7;
@@ -467,20 +467,23 @@ hr {
     width: 66%;
     padding-bottom: 3px;
     font-size: 18px; }
-    .loginModule .forgotAndLogin input:hover, .createUser .forgotAndLogin input:hover {
+    .loginModule .forgotAndLogin input:hover, .createUser .forgotAndLogin input:hover, .userPage .forgotAndLogin input:hover {
       background: #ffcb63; }
 
-.createUser a, .createUser a:visited {
+.createUser a, .userPage a, .createUser a:visited, .userPage a:visited {
   font-family: robot;
   font-weight: 400;
   color: #ffaa63;
   font-size: 18px;
   margin-left: 10px; }
-  .createUser a:hover, .createUser a:active, .createUser a:visited:hover, .createUser a:visited:active {
+  .createUser a:hover, .userPage a:hover, .createUser a:active, .userPage a:active, .createUser a:visited:hover, .userPage a:visited:hover, .createUser a:visited:active, .userPage a:visited:active {
     font-family: robot;
     font-weight: 400;
     color: #ffcb63;
     font-size: 18px; }
+
+.userPage .col-12 {
+  border-top: 0; }
 
 /***********************************************
  ***********************************************
@@ -543,45 +546,43 @@ hr {
     font-family: brush;
     font-weight: 400;
     color: #47b7b7;
-    font-size: 88px;
-    position: absolute; }
+    font-size: 88px; }
   #pos_about .about-sec {
-    width: 100%; }
+    width: 100%;
+    background-image: url("http://kamalteta.com/Media/Billed.jpg");
+    background-size: cover;
+    height: 100vh; }
     #pos_about .about-sec h2 {
-      top: 35%;
-      left: 22%;
-      color: #ffffff; }
-    #pos_about .about-sec article {
-      width: 500px;
       color: #ffffff;
-      font-family: robot;
-      font-size: 24px;
-      line-height: 1.5;
-      position: absolute;
-      top: 50%;
-      left: 15%; }
-    #pos_about .about-sec .bin {
-      width: 100%; }
+      position: relative;
+      padding: 150px 0 0 200px; }
+  #pos_about article {
+    width: 500px;
+    color: #ffffff;
+    font-family: robot;
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 50px 0 0 120px; }
 
 .contact-sec {
-  width: 100%; }
+  width: 100%;
+  background-image: url("http://kamalteta.com/Media/joker_location.png");
+  background-size: cover;
+  height: 100vh; }
   .contact-sec h2 {
-    left: 15%;
-    top: 165%; }
+    padding: 30px 0 0 250px; }
   .contact-sec #orangebox {
     background-color: #ffcb63;
     width: 500px;
     height: 350px;
-    position: absolute;
-    top: 175%;
-    left: 15%; }
+    margin: 30px 0 0 150px; }
     .contact-sec #orangebox #logpos {
       width: 100%;
       text-align: center;
       color: #ffffff; }
       .contact-sec #orangebox #logpos img {
         width: 40%;
-        padding: 20px; }
+        padding: 15px; }
       .contact-sec #orangebox #logpos p {
         margin: 0 auto;
         font-family: robot;

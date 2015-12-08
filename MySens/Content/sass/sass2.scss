@@ -83,19 +83,24 @@
    
      h2{
            @include heading($teal, 88);
-            position:absolute;
-        }
+            
+        } 
     
     .about-sec{
         
        width:100%;
+        background-image:url("http://kamalteta.com/Media/Billed.jpg");
+        background-size: cover;
+        height:100vh;
         
         h2 {
-            
-            top:35%;
-            left:22%;
             color:$white;
+            position:relative;
+            padding:150px 0 0 200px;
         }
+    }
+        
+        
         
         article{
             width:500px;
@@ -103,38 +108,35 @@
             font-family: robot;
             font-size: 24px;
             line-height: 1.5;
-            position:absolute;
-            top:50%;
-            left:15%;
-        }
-        
-        .bin{
-            
-            width:100%;
+            margin:50px 0 0 120px;
         }
     }
         
         
         
-    }
+    
     
     .contact-sec {
         
         width:100%;
+        background-image: url("http://kamalteta.com/Media/joker_location.png");
+        background-size: cover;
+        height:100vh;
         
-        h2{
-           left:15%;
-            top:165%;
-        }
+        h2 {
+              
+                padding:30px 0 0 250px;
+                
+            }
         
         #orangebox {
             
             background-color:$highlight;
             width:500px;
             height:350px;
-            position:absolute;
-            top:175%;
-            left:15%;
+            margin:30px 0 0 150px;
+            
+            
             
             #logpos{
                 
@@ -142,10 +144,9 @@
                 text-align: center;
                 color:$white;
                 
-                img{
-                width:40%;
-                padding:20px;
-               
+                img {
+                    width:40%;
+                    padding:15px;
                 }
                 
                 p {
@@ -159,7 +160,7 @@
             
             
             
-        }
+        } 
        
     }
 
