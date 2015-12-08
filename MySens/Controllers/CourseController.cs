@@ -30,7 +30,6 @@ namespace MySens.Controllers
         {
             var studentid = new SqlParameter("@StudentID",CurrentUser.Id );
             var courseid = new SqlParameter("@CourseID", id);
-            System.Diagnostics.Debug.WriteLine(id, CurrentUser.Id);
             this.db.Database.ExecuteSqlCommand("exec EnrollStudent @StudentID , @CourseID" , studentid, courseid);
             db.SaveChanges();
             return RedirectToAction("Index");

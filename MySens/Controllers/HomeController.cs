@@ -17,7 +17,10 @@ namespace MySens.Controllers
         private AppIdentityDbContext db = new AppIdentityDbContext();
         // GET: Home
 
-       // [Authorize]
+
+
+
+        // [Authorize]
         public ActionResult Index()
         {
             return View(GetData("Index"));
@@ -29,8 +32,17 @@ namespace MySens.Controllers
             return View("Index", GetData("OtherAction"));
         }
 
-        // GET: Home/Create
-        public ActionResult Create()
+        [ChildActionOnly]
+        public ActionResult GetTopCourses()
+        {
+
+            var top_courses = db.Courses.Include(c => c.Teacher);
+            return PartialView(top_courses.ToList());
+        }
+    
+
+    // GET: Home/Create
+    public ActionResult Create()
         {
             //  ViewBag.AppUserID = new SelectList(db.AppUsers, "Id", "FirstName");
             ViewBag.AppUserID = new SelectList(UserManager.Users.ToList(), "Id", "UserName");
