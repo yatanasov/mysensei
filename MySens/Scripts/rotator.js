@@ -1,34 +1,8 @@
 (function(){
 	"use strict"
-	var howItWorksBtn = document.querySelector('.howItWorks');
-	var howItWorks = document.querySelector('#howitworks');
 	var btnRotateLeft = document.querySelector('.tBtn1'); 
 	var btnRotateRight = document.querySelector('.tBtn2'); 
 	var rotator = document.querySelector('.buffer');
-	var loggedinBtn = document.querySelector('.loggedIn');
-	var popup = document.querySelector('.popup');
-	var landing = document.querySelector('.landing');
-
-	loggedinBtn.onclick=function(e){
-		e.preventDefault();
-		popup.classList.toggle('hidden');
-
-		landing.onclick=function(){
-			popup.classList.add('hidden');
-		}
-
-		popup.onclick=function(e){
-			e.stopPropagation();
-		}
-	}
-
-	howItWorksBtn.onclick=function(e){
-		e.preventDefault();
-		var howTop = $(howItWorks).offset().top;
-		$('html, body').animate({
-			scrollTop: howTop
-		}, 2000);
-	}
 
 	function homeMadeCarousel(){
 		var leftPos = 0;
@@ -43,7 +17,8 @@
 			} else if (leftPos >= 0) {
 				btnRotateLeft.classList.add('done');
 			}
-			rotator.style = 'left:'+leftPos+'%;';
+			rotator.style.left = leftPos+"%";
+			console.log(rotator.style.left);
 		}
 
 		btnRotateLeft.onclick=function(){
@@ -56,15 +31,12 @@
 			} else if (leftPos <= -66) {
 				btnRotateRight.classList.add('done');
 			}
-			rotator.style = 'left:'+leftPos+'%;';
+			rotator.style.left = leftPos+"%";
+			console.log(rotator.style.left);
 		}
 
 	}
 
 	homeMadeCarousel();
-
-
-
-	
 
 })(jQuery);

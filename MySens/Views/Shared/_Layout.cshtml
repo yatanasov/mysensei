@@ -19,20 +19,30 @@
 
         <nav class="navigation col-6">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="../Home">Home</a></li>
+                <li><a href="../About">About</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <a href="../Home/UserProps"><li class="loggedIn"><i class="fa fa-user"></i></li></a>
+                    <li class="loggedIn"><i class="fa fa-user"></i></li>
+                    
                 }
                 else
                 {
                     <a href="../Account/Login"><li class="loginBtn">Login</li></a>
+
                 }
             </ul>
+            
         </nav>
+
     </header>
-    
+    <div class="hidden popup">
+        <h2>User panel:</h2>
+        <a href="../Home/UserProps">Userpage</a>
+        <br />
+        <a href="../Account/Logout">Logout</a>
+        <br />
+    </div>
     @RenderBody()
 
     <footer class="col-12">
@@ -48,7 +58,9 @@
 
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/script.js"></script>
+    <script src="~/Scripts/scroll.js"></script>
+    <script src="~/Scripts/popup.js"></script>
+    <script src="~/Scripts/rotator.js"></script>
 
 </body>
 </html>
