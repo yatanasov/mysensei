@@ -56,10 +56,7 @@
   .panels-admin td {
     padding: 5px !important; }
     .panels-admin td .delete, .panels-admin td a {
-      padding: 3px !important; }
-
-  header {
-    background: #f0f !important; } }
+      padding: 3px !important; } }
 @media only screen and (max-width: 767px) {
   h2 {
     font-size: 54px !important; }
@@ -85,14 +82,12 @@
     width: 261px !important;
     margin: 5px 5px !important; }
 
-  header {
-    background: #0ff !important; }
-    header .col-6 {
-      width: 100%; }
-    header .navigation ul {
-      float: none !important;
-      padding: 10px;
-      padding-left: 15%; }
+  header .col-6 {
+    width: 100%; }
+  header .navigation ul {
+    float: none !important;
+    padding: 10px;
+    padding-left: 15%; }
 
   .topCourses {
     padding: 10px !important;
