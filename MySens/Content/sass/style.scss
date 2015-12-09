@@ -235,11 +235,11 @@ body{
 		}
 
 		.tBtn1{
-			left:7%
+			left:7%;
 		}
 
 		.tBtn2{
-			right:7%
+			right:7%;
 		}
 
 		.done{
@@ -269,8 +269,8 @@ body{
 
 					.testimonyPortrait {
 						border-radius:50%;
-						min-height:200px;
-						min-width:200px;
+						height:200px;
+						width:200px;
 					}
 
 					h4{
@@ -291,7 +291,6 @@ body{
 			margin-top:30%;
 			height:200px;
 			width:200px;
-			border-radius:50%;
 		}
 		h4{
 				@include heading($txt,24,robot);
@@ -586,6 +585,7 @@ hr{
 	@extend .createUser;
 	text-align:left;
 	padding-bottom:70px;
+	width:100%;
 
 	.col-12{
 		border-top:0;
@@ -607,7 +607,7 @@ hr{
 		margin:15px auto;
 		height:200px;
 		width:200px;
-		background-image:url('http://kamalteta.com/Media/french.jpg');
+		background-image:url('http://kamalteta.com/Media/Kamal.jpg');
 		background-size:cover;
 		border-radius:50%;
 		margin-bottom:30px;
@@ -711,3 +711,168 @@ hr{
     -moz-transition: all .3s ease;
     -o-transition: all .3s ease;
 }
+
+
+/***********************************************
+ ***********************************************
+			ADMIN MANAGEMENT PAGE
+***********************************************
+***********************************************/
+
+.panels-admin {
+    padding-top: 130px;
+    padding-bottom: 100px;
+    min-height:100%;
+    font-family:robot;
+    
+    .admin-heading {
+        @include heading($teal, 88);
+        text-align: center;
+    }
+    
+    .table {
+        
+        margin:0 auto;
+        padding:50px;
+        
+        td{
+            padding:12px;
+            border:1px solid $txt;
+        }
+        
+        .edit {
+            
+            text-decoration:none;
+            padding:8px 12px;
+            background-color: $highlight;
+            color:$white;
+        }
+        
+        .delete {
+            
+            background-color: red;
+            color: $white;
+            padding:8px;
+            border:0;
+            cursor:pointer;
+        }
+    }
+    
+     .btn-pos{
+         
+         width:100%;
+         text-align: center;
+        
+     .admin-btn {
+                text-decoration: none;
+				width:100px;
+				font-size:18px;
+                text-align: center;
+				background:$teal;
+				color:$white;
+				padding:8px;
+				margin:0 auto;
+				cursor:pointer;
+
+				&:hover{
+					background:$highlight;
+				        }
+			     }
+            }
+
+}
+/***********************************************
+ ***********************************************
+			ADMIN MANAGEMENT PAGE END
+***********************************************
+***********************************************/
+
+
+
+#pos_about{
+    
+    min-height:100%;
+    margin-bottom:70px;
+   
+     h2{
+           @include heading($teal, 88);
+            
+        } 
+    
+    .about-sec{
+        
+       width:100%;
+        background-image:url("http://kamalteta.com/Media/Billed.jpg");
+        background-size: cover;
+        height:100vh;
+        
+        h2 {
+            color:$white;
+            position:relative;
+            padding:150px 0 0 200px;
+        }
+    }
+        
+        
+        
+        article{
+            width:500px;
+            color:$white;
+            font-family: robot;
+            font-size: 24px;
+            line-height: 1.5;
+            margin:50px 0 0 120px;
+        }
+    }
+        
+        
+        
+    
+    
+    .contact-sec {
+        
+        width:100%;
+        background-image: url("http://kamalteta.com/Media/joker_location.png");
+        background-size: cover;
+        height:100vh;
+        
+        h2 {
+              
+                padding:30px 0 0 250px;
+                
+            }
+        
+        #orangebox {
+            
+            background-color:$highlight;
+            width:500px;
+            height:350px;
+            margin:30px 0 0 150px;
+            
+            
+            
+            #logpos{
+                
+                width:100%;
+                text-align: center;
+                color:$white;
+                
+                img {
+                    width:40%;
+                    padding:15px;
+                }
+                
+                p {
+                margin:0 auto;
+                font-family:robot;
+                font-size: 24px;
+                width:200px;
+                padding:15px;
+            }
+            }
+            
+            
+            
+        } 
+       
+    }

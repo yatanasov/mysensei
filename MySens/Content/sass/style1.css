@@ -95,9 +95,6 @@
 .test4 {
   left: 132%; }
 
-.test5 {
-  left: 165%; }
-
 /***********************************************
  ***********************************************
 			IMPORT FONTS HERE
@@ -287,8 +284,8 @@ body {
           position: absolute; }
           body #testimonials .borderControl .buffer .test .testimonyPortrait {
             border-radius: 50%;
-            min-height: 200px;
-            min-width: 200px; }
+            height: 200px;
+            width: 200px; }
           body #testimonials .borderControl .buffer .test h4 {
             font-family: robot;
             font-weight: 400;
@@ -536,7 +533,8 @@ hr {
 
 .profilePage {
   text-align: left;
-  padding-bottom: 70px; }
+  padding-bottom: 70px;
+  width: 100%; }
   .profilePage .col-12 {
     border-top: 0;
     margin-top: 0;
@@ -551,7 +549,7 @@ hr {
     margin: 15px auto;
     height: 200px;
     width: 200px;
-    background-image: url("http://kamalteta.com/Media/french.jpg");
+    background-image: url("http://kamalteta.com/Media/Kamal.jpg");
     background-size: cover;
     border-radius: 50%;
     margin-bottom: 30px; }
@@ -649,5 +647,110 @@ hr {
     font-weight: 400;
     color: #ffcb63;
     font-size: 24px; }
+
+/***********************************************
+ ***********************************************
+			ADMIN MANAGEMENT PAGE
+***********************************************
+***********************************************/
+.panels-admin {
+  padding-top: 130px;
+  padding-bottom: 100px;
+  min-height: 100%;
+  font-family: robot; }
+  .panels-admin .admin-heading {
+    font-family: brush;
+    font-weight: 400;
+    color: #47b7b7;
+    font-size: 88px;
+    text-align: center; }
+  .panels-admin .table {
+    margin: 0 auto;
+    padding: 50px; }
+    .panels-admin .table td {
+      padding: 12px;
+      border: 1px solid #555a5c; }
+    .panels-admin .table .edit {
+      text-decoration: none;
+      padding: 8px 12px;
+      background-color: #ffcb63;
+      color: #ffffff; }
+    .panels-admin .table .delete {
+      background-color: red;
+      color: #ffffff;
+      padding: 8px;
+      border: 0;
+      cursor: pointer; }
+  .panels-admin .btn-pos {
+    width: 100%;
+    text-align: center; }
+    .panels-admin .btn-pos .admin-btn {
+      text-decoration: none;
+      width: 100px;
+      font-size: 18px;
+      text-align: center;
+      background: #47b7b7;
+      color: #ffffff;
+      padding: 8px;
+      margin: 0 auto;
+      cursor: pointer; }
+      .panels-admin .btn-pos .admin-btn:hover {
+        background: #ffcb63; }
+
+/***********************************************
+ ***********************************************
+			ADMIN MANAGEMENT PAGE END
+***********************************************
+***********************************************/
+#pos_about {
+  min-height: 100%;
+  margin-bottom: 70px; }
+  #pos_about h2 {
+    font-family: brush;
+    font-weight: 400;
+    color: #47b7b7;
+    font-size: 88px; }
+  #pos_about .about-sec {
+    width: 100%;
+    background-image: url("http://kamalteta.com/Media/Billed.jpg");
+    background-size: cover;
+    height: 100vh; }
+    #pos_about .about-sec h2 {
+      color: #ffffff;
+      position: relative;
+      padding: 150px 0 0 200px; }
+  #pos_about article {
+    width: 500px;
+    color: #ffffff;
+    font-family: robot;
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 50px 0 0 120px; }
+
+.contact-sec {
+  width: 100%;
+  background-image: url("http://kamalteta.com/Media/joker_location.png");
+  background-size: cover;
+  height: 100vh; }
+  .contact-sec h2 {
+    padding: 30px 0 0 250px; }
+  .contact-sec #orangebox {
+    background-color: #ffcb63;
+    width: 500px;
+    height: 350px;
+    margin: 30px 0 0 150px; }
+    .contact-sec #orangebox #logpos {
+      width: 100%;
+      text-align: center;
+      color: #ffffff; }
+      .contact-sec #orangebox #logpos img {
+        width: 40%;
+        padding: 15px; }
+      .contact-sec #orangebox #logpos p {
+        margin: 0 auto;
+        font-family: robot;
+        font-size: 24px;
+        width: 200px;
+        padding: 15px; }
 
 /*# sourceMappingURL=style1.css.map */
