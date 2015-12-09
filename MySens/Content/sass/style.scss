@@ -185,6 +185,9 @@ body{
 		@include heading($txt,18,robot);
 		padding:60px 30px 0 30px;
 		background: -moz-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg);
+		background: -webkit-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg);
+		background: -0-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg);
+		background: linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg);
 		width:calc(100% - 60px);
 
 		h2{
@@ -211,7 +214,10 @@ body{
 
 
 	#testimonials{
-		background: -moz-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg) !important;
+		background: -moz-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg)!important;
+		background: -webkit-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg)!important;
+		background: -0-linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg)!important;
+		background: linear-gradient(top, $bg, $bg 20%, $white 20%, $white 80%, $bg 80%, $bg)!important;
 
 		.tBtn{
 			height:25px;
@@ -579,6 +585,7 @@ hr{
 .profilePage {
 	@extend .createUser;
 	text-align:left;
+	padding-bottom:70px;
 
 	.col-12{
 		border-top:0;

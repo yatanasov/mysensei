@@ -222,6 +222,9 @@ body {
     font-size: 18px;
     padding: 60px 30px 0 30px;
     background: -moz-linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5);
+    background: -webkit-linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5);
+    background: 0-linear-gradient top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5;
+    background: linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5);
     width: calc(100% - 60px); }
     body .topCourses h2 {
       font-family: brush;
@@ -245,7 +248,10 @@ body {
         color: #ffcb63;
         font-size: 18px; }
   body #testimonials {
-    background: -moz-linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5) !important; }
+    background: -moz-linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5) !important;
+    background: -webkit-linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5) !important;
+    background: 0-linear-gradient top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5 !important;
+    background: linear-gradient(top, #f5f5f5, #f5f5f5 20%, #ffffff 20%, #ffffff 80%, #f5f5f5 80%, #f5f5f5) !important; }
     body #testimonials .tBtn {
       height: 25px;
       width: 25px;
@@ -529,7 +535,8 @@ hr {
     font-size: 18px; }
 
 .profilePage {
-  text-align: left; }
+  text-align: left;
+  padding-bottom: 70px; }
   .profilePage .col-12 {
     border-top: 0;
     margin-top: 0;

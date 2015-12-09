@@ -15,10 +15,10 @@ namespace MySens.Models
         public Cities City { get; set; }
         public string About { get; set; }
         //public int PhoneNumber { get; set; }
-       // public string PasswordHash { get; set; }
-       // public string UserName { get; set; }
-       // public string Id { get; set; }
-              
+        // public string PasswordHash { get; set; }
+        // public string UserName { get; set; }
+        // public string Id { get; set; }
+
         public virtual ICollection<Course> CoursesEnrolled { get; set; }
 
         public virtual ICollection<Course> CoursesTeaching { get; set; }

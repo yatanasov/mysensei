@@ -24,7 +24,7 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="loggedIn"><i class="fa fa-user"></i></li>
-                    
+
                 }
                 else
                 {
@@ -40,6 +40,11 @@
         <h2>User panel:</h2>
         <a href="../Home/UserProps">Userpage</a>
         <br />
+        @if (User.IsInRole("Administrators"))
+        {
+        <a href="../Admin">Admin section</a>
+        <br />
+        }
         <a href="../Account/Logout">Logout</a>
         <br />
     </div>

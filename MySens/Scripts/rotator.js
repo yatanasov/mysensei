@@ -18,7 +18,6 @@
 				btnRotateLeft.classList.add('done');
 			}
 			rotator.style.left = leftPos+"%";
-			console.log(rotator.style.left);
 		}
 
 		btnRotateLeft.onclick=function(){
@@ -32,7 +31,6 @@
 				btnRotateRight.classList.add('done');
 			}
 			rotator.style.left = leftPos+"%";
-			console.log(rotator.style.left);
 		}
 
 	}
