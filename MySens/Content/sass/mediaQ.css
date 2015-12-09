@@ -1,0 +1,151 @@
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .landing h1 {
+    padding-top: 20% !important; }
+
+  .topCourses table {
+    margin-top: 20% !important; }
+    .topCourses table tr {
+      font-size: 15px; }
+
+  .cat {
+    width: 150px;
+    height: 150px;
+    font-size: 18px; }
+
+  #testimonials .testimonyPortrait {
+    height: 150px !important;
+    width: 150px !important;
+    margin-top: 30px; }
+  #testimonials h4 {
+    font-size: 22px !important; }
+  #testimonials .tBtn {
+    margin-top: 32% !important; }
+  #testimonials .tBtn1 {
+    left: 5% !important; }
+  #testimonials .tBtn2 {
+    right: 5% !important; }
+
+  #howitworks img {
+    height: 120px !important;
+    width: 120px !important;
+    margin-top: 100%  !important; }
+
+  .course {
+    font-size: 12px; }
+    .course td, .course th {
+      padding-bottom: 5px;
+      padding-right: 5px; }
+    .course a {
+      font-size: 12px; }
+      .course a:hover {
+        font-size: 12px; }
+
+  .profilePage p, .profilePage td {
+    font-size: 12px; }
+  .profilePage h2 {
+    font-size: 48px; }
+  .profilePage .userPageName {
+    font-size: 56px; }
+  .profilePage .profileUserImage {
+    height: 150px !important;
+    width: 150px !important;
+    margin-left: 0px; }
+  .profilePage i {
+    text-align: left; }
+
+  .panels-admin td {
+    padding: 5px !important; }
+    .panels-admin td .delete, .panels-admin td a {
+      padding: 3px !important; }
+
+  header {
+    background: #f0f !important; } }
+@media only screen and (max-width: 767px) {
+  h2 {
+    font-size: 54px !important; }
+
+  .vidBgContain, #title {
+    display: none; }
+
+  .mesh {
+    background-image: url("http://kamalteta.com/Media/Billed.jpg");
+    background-size: cover;
+    background-position: right; }
+
+  .howItWorks {
+    margin-top: 80% !important;
+    width: 50% !important;
+    font-size: 18px !important; }
+
+  #wrapper1 {
+    padding-top: 5px;
+    height: 95px; }
+
+  #course {
+    width: 261px !important;
+    margin: 5px 5px !important; }
+
+  header {
+    background: #0ff !important; }
+    header .col-6 {
+      width: 100%; }
+    header .navigation ul {
+      float: none !important;
+      padding: 10px;
+      padding-left: 15%; }
+
+  .topCourses {
+    padding: 10px !important;
+    margin-top: -70%;
+    width: 100% !important; }
+    .topCourses table {
+      margin-top: 20% !important; }
+      .topCourses table tr, .topCourses table a {
+        font-size: 12px;
+        padding: 2px; }
+
+  .mobileHide, hr {
+    display: none; }
+
+  #categories {
+    display: none; }
+
+  #testimonials {
+    text-align: center !important;
+    padding: 10px !important;
+    width: 100% !important; }
+    #testimonials h1 {
+      font-size: 54px;
+      margin-top: -10%; }
+    #testimonials h4 {
+      font-size: 12px !important;
+      width: 200px !important;
+      margin-left: 30px; }
+    #testimonials img {
+      width: 150px !important;
+      height: 150px !important;
+      margin-top: 80px;
+      margin-left: 70px; }
+
+  #howitworks {
+    text-align: center; }
+    #howitworks h1 {
+      font-size: 54px;
+      margin-top: -50%; }
+
+  #pos_about {
+    text-align: center; }
+    #pos_about h2 {
+      padding: 5px !important;
+      padding-top: 200px !important; }
+    #pos_about article {
+      font-size: 12px !important;
+      margin: 5px !important;
+      width: 100% !important; }
+    #pos_about #orangebox {
+      margin: 5px !important;
+      width: 80%; }
+    #pos_about .contact-sec h2 {
+      padding-top: 30px !important; } }
+
+/*# sourceMappingURL=mediaQ.css.map */
