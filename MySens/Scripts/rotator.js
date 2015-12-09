@@ -8,9 +8,9 @@
 		var leftPos = 0;
 
 		btnRotateRight.onclick=function(){
-			if (leftPos <= -66) {
+			if (leftPos <= -33) {
 				btnRotateRight.classList.add('done');
-			}else if (leftPos > -66) {
+			}else if (leftPos > -33) {
 				btnRotateRight.classList.remove('done');
 				btnRotateLeft.classList.remove('done');
 				leftPos-=33;
@@ -27,7 +27,7 @@
 				btnRotateRight.classList.remove('done');
 				btnRotateLeft.classList.remove('done');
 				leftPos +=33;
-			} else if (leftPos <= -66) {
+			} else if (leftPos <= -33) {
 				btnRotateRight.classList.add('done');
 			}
 			rotator.style.left = leftPos+"%";

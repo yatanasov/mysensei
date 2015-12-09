@@ -1,4 +1,4 @@
-$numberOfTestimonies: 5;
+$numberOfTestimonies: 4;
 
 @for $i from 1 through $numberOfTestimonies {
 	.test#{$i} {
